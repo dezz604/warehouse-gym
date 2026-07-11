@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+// 內部計數動畫元件
 function RollingStrengthAge() {
   const steps = [62, 58, 51, 44, 34];
   const [index, setIndex] = useState(0);
@@ -10,25 +11,26 @@ function RollingStrengthAge() {
     if (index >= steps.length - 1) return;
 
     const timer = setTimeout(() => {
-      setIndex(index + 1);
+      setIndex((prev) => prev + 1);
     }, 700);
 
     return () => clearTimeout(timer);
-  }, [index]);
+  }, [index, steps.length]);
 
   return (
     <div>
-      <div className="text-sm text-white/35">Strength Age</div>
-      <div className="mt-3 text-6xl font-extrabold tracking-[-0.035em] md:text-7xl">
+      <div className="text-xs tracking-wider text-white/40 uppercase font-medium">Strength Age</div>
+      <div className="mt-2 text-6xl font-light tracking-tight md:text-7xl font-sans">
         {steps[index]}
       </div>
-      <div className="mt-4 text-[10px] font-black tracking-[0.22em] text-white/35">
+      <div className="mt-4 text-[10px] font-semibold tracking-[0.25em] text-white/30 font-mono">
         {index === steps.length - 1 ? "STRENGTH AGE™" : "CALCULATING"}
       </div>
     </div>
   );
 }
 
+// Next.js 根路由主頁面
 export default function Home() {
   const ageSteps = [62, 58, 51, 44, 34];
 
@@ -65,113 +67,123 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen overflow-hidden bg-black text-white">
-      {/* HERO */}
-      <section className="relative min-h-screen px-6 py-8 md:px-14 lg:px-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_30%,rgba(255,255,255,0.13),transparent_30%),linear-gradient(135deg,#181818_0%,#050505_48%,#000_100%)]" />
-        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] bg-[size:80px_80px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,.84)_78%)]" />
+    <main className="min-h-screen overflow-hidden bg-black text-white font-sans antialiased selection:bg-white selection:text-black">
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen px-6 py-8 md:px-14 lg:px-20 flex flex-col justify-between">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_30%,rgba(255,255,255,0.08),transparent_30%),linear-gradient(135deg,#0d0d0d_0%,#030303_48%,#000_100%)]" />
+        <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(rgba(255,255,255,.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,.9)_80%)]" />
 
-        <header className="relative z-10 flex items-center justify-between border-b border-white/10 pb-6">
+        <header className="relative z-10 flex items-center justify-between border-b border-white/5 pb-6">
           <div>
-            <div className="text-2xl font-black tracking-[0.24em] md:text-3xl">
+            <div className="text-xl font-medium tracking-[0.2em] font-sans sm:text-2xl">
               WAREHOUSE GYM
             </div>
-            <div className="mt-2 text-[10px] font-bold tracking-[0.38em] text-white/42 md:text-xs">
-              STRENGTH · PERFORMANCE · LONGEVITY
+            <div className="mt-1.5 text-[9px] font-medium tracking-[0.4em] text-white/40 font-sans uppercase">
+              Strength · Performance · Longevity
             </div>
           </div>
 
-          <nav className="hidden items-center gap-8 text-[11px] font-bold tracking-[0.2em] text-white/50 lg:flex">
-            <a href="#strength-age">STRENGTH AGE</a>
-            <a href="#method">METHOD</a>
-            <a href="#dashboard">DASHBOARD</a>
-            <a href="#vision">VISION</a>
+          <nav className="hidden items-center gap-10 text-[10px] font-medium tracking-[0.25em] text-white/40 lg:flex">
+            <a href="#strength-age" className="hover:text-white transition-colors duration-300">STRENGTH AGE</a>
+            <a href="#method" className="hover:text-white transition-colors duration-300">METHOD</a>
+            <a href="#dashboard" className="hover:text-white transition-colors duration-300">DASHBOARD</a>
+            <a href="#vision" className="hover:text-white transition-colors duration-300">VISION</a>
           </nav>
 
           <a
             href="#strength-age"
-            className="rounded-full bg-white px-5 py-3 text-[11px] font-black tracking-[0.16em] text-black"
+            className="rounded-full bg-white px-6 py-2.5 text-[10px] font-semibold tracking-[0.15em] text-black transition-all duration-300 hover:bg-white/90 font-sans"
           >
             BOOK TEST
           </a>
         </header>
 
-        <div className="relative z-10 grid min-h-[82vh] items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
-          <div>
-            <div className="mb-8 flex items-center gap-4 text-[11px] font-black tracking-[0.32em] text-white/42">
-              <span className="h-px w-12 bg-white/35" />
+        <div className="relative z-10 grid my-auto min-h-[75vh] items-center gap-16 lg:grid-cols-[1fr_1fr] pt-8 pb-12">
+          <div className="flex flex-col justify-center">
+            <div className="mb-6 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+              <span className="h-px w-8 bg-white/20" />
               TAIWAN STRENGTH & LONGEVITY LAB
             </div>
 
-            <h1 className="hero-lift-heavy text-[16vw] leading-[0.88] md:text-[11.2vw] lg:text-[7.5vw]">
-              <span className="block">LIFT</span>
-              <span className="block">HEAVY.</span>
-            </h1>
+            {/* 標題優化區塊：改用原生 fontStretch 緊縮文字本身，不影響排版寬度 */}
+            <div className="w-full">
+              <h1 
+                className="text-[17vw] leading-[0.82] font-black tracking-[-0.05em] uppercase select-none sm:text-[13vw] md:text-[10vw] lg:text-[7.8vw]"
+                style={{
+                  fontFamily: "Impact, 'Arial Black', sans-serif",
+                  fontStretch: "75%",
+                }}
+              >
+                <span className="block text-white">LIFT</span>
+                <span className="block text-white">HEAVY.</span>
+              </h1>
 
-            <h2
-              className="mt-8 text-[9.5vw] font-black leading-[1] tracking-[-0.025em] text-transparent md:text-[6.4vw] lg:text-[4vw]"
-              style={{
-                WebkitTextStroke: "1.8px rgba(255,255,255,.58)",
-              }}
-            >
-              STAY
-              <br />
-              YOUNG.
-            </h2>
+              <div
+                className="mt-4 text-[9vw] font-black leading-[1] tracking-[-0.04em] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[4.2vw]"
+                style={{
+                  fontFamily: "Impact, 'Arial Black', sans-serif",
+                  fontStretch: "75%",
+                  WebkitTextStroke: "1px rgba(255, 255, 255, 0.35)",
+                  color: "transparent",
+                }}
+              >
+                STAY YOUNG.
+              </div>
+            </div>
 
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-white/62 md:text-lg">
+            <p className="mt-8 max-w-md text-sm md:text-base leading-relaxed text-white/50 font-normal tracking-wide">
               Your body is aging. Your strength does not have to.
               <br />
-              Warehouse Gym measures strength, performance and longevity as one system.
+              Warehouse Gym measures strength, performance and longevity as one unified system.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#strength-age"
-                className="rounded-full bg-white px-7 py-4 text-center text-xs font-black tracking-[0.16em] text-black transition hover:scale-[1.03]"
+                className="rounded-full bg-white px-6 py-3.5 text-center text-[11px] font-semibold tracking-[0.15em] text-black transition-all duration-300 hover:scale-[1.01] hover:bg-white/95"
               >
                 DISCOVER STRENGTH AGE™
               </a>
 
               <a
                 href="#vision"
-                className="rounded-full border border-white/20 px-7 py-4 text-center text-xs font-bold tracking-[0.16em] text-white/75 transition hover:bg-white/10"
+                className="rounded-full border border-white/10 px-6 py-3.5 text-center text-[11px] font-medium tracking-[0.15em] text-white/60 transition-all duration-300 hover:bg-white/5 hover:text-white"
               >
                 INVESTOR VISION
               </a>
             </div>
           </div>
 
-          <aside className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-6 shadow-2xl backdrop-blur md:p-8">
-            <div className="text-[11px] font-black tracking-[0.3em] text-white/36">
-              CORE PRODUCT
+          <aside className="rounded-[1.5rem] border border-white/5 bg-white/[0.02] p-6 shadow-2xl backdrop-blur-md md:p-8">
+            <div className="text-[10px] font-semibold tracking-[0.25em] text-white/30 uppercase">
+              Core Product
             </div>
 
-            <div className="mt-8 rounded-[2rem] border border-white/10 bg-black/45 p-7">
-              <div className="text-[11px] font-black tracking-[0.32em] text-white/35">
+            <div className="mt-6 rounded-[1.2rem] border border-white/5 bg-black/40 p-6">
+              <div className="text-[10px] font-semibold tracking-[0.25em] text-white/30 font-mono uppercase">
                 STRENGTH AGE™
               </div>
 
-              <div className="mt-8 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
+              <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-6">
                 <div>
-                  <div className="text-sm text-white/35">Body Age</div>
-                  <div className="mt-3 text-6xl font-extrabold tracking-[-0.035em] md:text-7xl">
+                  <div className="text-xs tracking-wider text-white/40 uppercase font-medium">Body Age</div>
+                  <div className="mt-2 text-6xl font-light tracking-tight md:text-7xl font-sans">
                     62
                   </div>
                 </div>
 
-                <div className="text-4xl text-white/25">↓</div>
+                <div className="text-2xl font-light text-white/20">&rarr;</div>
 
                 <RollingStrengthAge />
               </div>
 
-              <p className="mt-8 text-sm leading-relaxed text-white/55">
-                Not BMI. Not bodyweight. Not just InBody. A measurable index for how well your body is built to age.
+              <p className="mt-6 text-xs leading-relaxed text-white/40 tracking-wide font-normal">
+                Not BMI. Not bodyweight. Not just InBody. A measurable index for how well your body is built to handle aging.
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-3">
               {[
                 ["Strength", "91"],
                 ["Power", "93"],
@@ -180,12 +192,12 @@ export default function Home() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-3xl border border-white/10 bg-black/35 p-5"
+                  className="rounded-[1rem] border border-white/5 bg-black/20 p-4 transition-all duration-300 hover:bg-white/[0.01]"
                 >
-                  <div className="text-4xl font-extrabold tracking-[-0.02em]">
+                  <div className="text-3xl font-light tracking-tight font-sans">
                     {value}
                   </div>
-                  <div className="mt-3 text-[11px] font-bold tracking-[0.22em] text-white/36">
+                  <div className="mt-2 text-[10px] font-medium tracking-[0.15em] text-white/30 uppercase">
                     {label}
                   </div>
                 </div>
@@ -195,125 +207,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STRENGTH AGE */}
+      {/* STRENGTH AGE SECTION */}
       <section
         id="strength-age"
-        className="relative min-h-screen border-t border-white/10 bg-[#050505] px-6 py-28 md:px-14 lg:px-20"
+        className="relative min-h-screen border-t border-white/5 bg-[#030303] px-6 py-24 md:px-14 lg:px-20 flex flex-col justify-center"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(255,255,255,0.09),transparent_34%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(255,255,255,0.05),transparent_34%)]" />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="mb-8 flex items-center gap-4 text-[11px] font-black tracking-[0.36em] text-white/38">
-            <span className="h-px w-12 bg-white/35" />
+        <div className="relative mx-auto max-w-7xl w-full">
+          <div className="mb-8 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+            <span className="h-px w-8 bg-white/20" />
             THE SIGNATURE METRIC
           </div>
 
-          <div className="grid items-center gap-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr]">
             <div>
-              <h2 className="section-title text-5xl md:text-7xl lg:text-7xl">
-                THIS IS
-                <br />
-                NOT BMI.
-                <br />
-                NOT INBODY.
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-light tracking-tight leading-[1.15] font-sans">
+                THIS IS <br />
+                <span className="font-normal text-white/40">NOT BMI.</span> <br />
+                <span className="font-normal text-white/40">NOT INBODY.</span>
               </h2>
 
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/58 md:text-xl">
-                Strength Age™ converts strength, force, power, muscle and capacity into one number people instantly understand.
+              <p className="mt-6 max-w-md text-sm md:text-base leading-relaxed text-white/50 tracking-wide font-normal">
+                Strength Age™ converts compound strength, rate of force development, peak power, and cellular capacity into one clean metrics.
               </p>
 
-              <div className="mt-10 inline-flex rounded-full border border-white/15 px-6 py-3 text-[11px] font-black tracking-[0.22em] text-white/55">
-                MEASURE WHAT ACTUALLY MATTERS
+              <div className="mt-8 inline-flex rounded-full border border-white/10 px-5 py-2.5 text-[10px] font-medium tracking-[0.2em] text-white/40 uppercase">
+                Measure what actually matters
               </div>
             </div>
 
-            <div className="rounded-[2.5rem] border border-white/10 bg-black/70 p-7 shadow-2xl md:p-10">
-              <div className="flex items-center justify-between border-b border-white/10 pb-6">
+            <div className="rounded-[1.5rem] border border-white/5 bg-black/50 p-6 shadow-2xl md:p-8">
+              <div className="flex items-center justify-between border-b border-white/5 pb-5">
                 <div>
-                  <div className="text-[11px] font-black tracking-[0.35em] text-white/35">
+                  <div className="text-[10px] font-semibold tracking-[0.25em] text-white/30 uppercase">
                     AGE TRANSFORMATION
                   </div>
-                  <div className="mt-2 text-sm text-white/45">
-                    The number investors will remember.
+                  <div className="mt-1 text-xs text-white/40">
+                    The single metrics that redefines progress.
                   </div>
                 </div>
 
-                <div className="rounded-full bg-white px-4 py-2 text-[10px] font-black tracking-[0.18em] text-black">
+                <div className="rounded-full bg-white/[0.05] border border-white/10 px-3 py-1.5 text-[9px] font-semibold tracking-[0.15em] text-white/60 uppercase">
                   CORE IP
                 </div>
               </div>
 
-              <div className="mt-10 space-y-7">
-                {ageSteps.map((age, index) => (
+              <div className="mt-8 space-y-5">
+                {ageSteps.map((age, idx) => (
                   <div key={age} className="flex items-center gap-5">
                     <div
-                      className={`w-28 text-6xl font-extrabold tracking-[-0.035em] md:text-7xl ${
-                        index === ageSteps.length - 1
-                          ? "text-white"
-                          : "text-white/28"
+                      className={`w-20 text-4xl font-light tracking-tight md:text-5xl font-sans ${
+                        idx === ageSteps.length - 1 ? "text-white font-normal" : "text-white/15"
                       }`}
                     >
                       {age}
                     </div>
 
-                    <div className="h-px flex-1 bg-white/10" />
+                    <div className="h-px flex-1 bg-white/5" />
 
-                    {index === ageSteps.length - 1 ? (
-                      <div className="rounded-full bg-white px-5 py-3 text-[10px] font-black tracking-[0.18em] text-black">
+                    {idx === ageSteps.length - 1 ? (
+                      <div className="rounded-full bg-white px-4 py-2 text-[9px] font-semibold tracking-[0.15em] text-black uppercase font-sans shadow-md">
                         STRENGTH AGE™
                       </div>
                     ) : (
-                      <div className="text-3xl text-white/20">↓</div>
+                      <div className="text-xl text-white/10">&darr;</div>
                     )}
                   </div>
                 ))}
               </div>
 
-              <p className="mt-10 text-lg leading-relaxed text-white/55">
-                Your birthday is fixed. Your Strength Age™ is trainable.
+              <p className="mt-8 text-xs text-white/40 tracking-wide font-normal">
+                Your chronological age is fixed. Your Strength Age™ is asset-backed and trainable.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* METHOD */}
+      {/* METHOD SECTION */}
       <section
         id="method"
-        className="border-t border-white/10 bg-black px-6 py-28 md:px-14 lg:px-20"
+        className="border-t border-white/5 bg-black px-6 py-24 md:px-14 lg:px-20 flex flex-col justify-center"
       >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-center gap-4 text-[11px] font-black tracking-[0.36em] text-white/38">
-            <span className="h-px w-12 bg-white/35" />
+        <div className="mx-auto max-w-7xl w-full">
+          <div className="mb-8 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+            <span className="h-px w-8 bg-white/20" />
             THE WAREHOUSE METHOD
           </div>
 
-          <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr]">
             <div>
-              <h2 className="section-title text-5xl md:text-7xl lg:text-7xl">
-                MEASURE.
-                <br />
-                TRAIN.
-                <br />
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-light tracking-tight leading-[1.15] font-sans">
+                MEASURE. <br />
+                TRAIN. <br />
                 RETEST.
               </h2>
 
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/58 md:text-xl">
-                Every member enters a feedback loop: assessment, training, adaptation, and retesting. Progress becomes visible.
+              <p className="mt-6 max-w-md text-sm md:text-base leading-relaxed text-white/50 tracking-wide font-normal">
+                Every member enters a continuous optimization loop: precise laboratory grade assessment, purpose-built training, adaptation mapping, and systematic testing.
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {method.map(([num, title, desc]) => (
                 <div
                   key={title}
-                  className="rounded-[1.6rem] border border-white/10 bg-white/[0.035] p-6"
+                  className="rounded-[1.2rem] border border-white/5 bg-white/[0.01] p-6 flex flex-col justify-between transition-all duration-300 hover:bg-white/[0.02]"
                 >
-                  <div className="text-sm font-black text-white/24">{num}</div>
-                  <div className="mt-8 text-xl font-black tracking-[0.06em]">
-                    {title}
+                  <div>
+                    <div className="text-xs font-mono font-medium text-white/20">{num}</div>
+                    <div className="mt-4 text-lg font-normal tracking-wide font-sans">
+                      {title}
+                    </div>
                   </div>
-                  <p className="mt-4 text-sm leading-relaxed text-white/48">
+                  <p className="mt-4 text-xs leading-relaxed text-white/40 font-normal tracking-wide">
                     {desc}
                   </p>
                 </div>
@@ -323,47 +331,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DASHBOARD */}
+      {/* DASHBOARD SECTION */}
       <section
         id="dashboard"
-        className="relative border-t border-white/10 bg-[#070707] px-6 py-28 md:px-14 lg:px-20"
+        className="relative border-t border-white/5 bg-[#040404] px-6 py-24 md:px-14 lg:px-20 flex flex-col justify-center"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_50%,rgba(255,255,255,0.07),transparent_34%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_50%,rgba(255,255,255,0.04),transparent_34%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="relative mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_1.1fr] w-full">
           <div>
-            <div className="mb-8 flex items-center gap-4 text-[11px] font-black tracking-[0.36em] text-white/38">
-              <span className="h-px w-12 bg-white/35" />
+            <div className="mb-8 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+              <span className="h-px w-8 bg-white/20" />
               DATA PLATFORM
             </div>
 
-            <h2 className="section-title text-5xl md:text-7xl lg:text-7xl">
-              EVERY
-              <br />
-              MEMBER
-              <br />
-              LEAVES
-              <br />
-              WITH DATA.
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-light tracking-tight leading-[1.15] font-sans">
+              EVERY MEMBER <br />
+              LEAVES WITH <br />
+              <span className="font-normal text-white/30">BIOLOGICAL DATA.</span>
             </h2>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/58 md:text-xl">
-              This is not a normal gym report. This is the beginning of a long-term strength and longevity record.
+            <p className="mt-6 max-w-md text-sm md:text-base leading-relaxed text-white/50 tracking-wide font-normal">
+              This is not a traditional fitness report. This forms the base layer of a long-term medical grade strength and longevity record.
             </p>
           </div>
 
-          <div className="rounded-[2.5rem] border border-white/10 bg-black/70 p-8">
-            <div className="mb-6 text-[11px] font-black tracking-[0.35em] text-white/35">
+          <div className="rounded-[1.5rem] border border-white/5 bg-black/60 p-6 shadow-2xl md:p-8">
+            <div className="mb-4 text-[10px] font-semibold tracking-[0.25em] text-white/30 uppercase">
               MEMBER DASHBOARD PREVIEW
             </div>
 
             {dashboard.map(([label, value]) => (
               <div
                 key={label}
-                className="flex items-center justify-between border-b border-white/10 py-6 last:border-b-0"
+                className="flex items-center justify-between border-b border-white/5 py-4 last:border-b-0"
               >
-                <div className="text-base font-bold text-white/55">{label}</div>
-                <div className="text-5xl font-extrabold tracking-[-0.02em]">
+                <div className="text-sm font-medium text-white/55 tracking-wide">{label}</div>
+                <div className="text-4xl font-light tracking-tight font-sans">
                   {value}
                 </div>
               </div>
@@ -372,65 +376,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VISION */}
+      {/* VISION SECTION */}
       <section
         id="vision"
-        className="border-t border-white/10 bg-black px-6 py-28 md:px-14 lg:px-20"
+        className="border-t border-white/5 bg-black px-6 py-24 md:px-14 lg:px-20 flex flex-col justify-center"
       >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-center gap-4 text-[11px] font-black tracking-[0.36em] text-white/38">
-            <span className="h-px w-12 bg-white/35" />
+        <div className="mx-auto max-w-7xl w-full">
+          <div className="mb-8 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+            <span className="h-px w-8 bg-white/20" />
             INVESTOR VISION
           </div>
 
-          <h2 className="section-title max-w-6xl text-5xl md:text-7xl lg:text-7xl">
-            WE ARE NOT
-            <br />
-            BUILDING
-            <br />
-            ANOTHER GYM.
+          <h2 className="max-w-4xl text-4xl md:text-5xl lg:text-5xl font-light tracking-tight leading-[1.15] font-sans">
+            WE ARE NOT BUILDING <br />
+            <span className="font-normal text-white/30">ANOTHER FITNESS GYM.</span>
           </h2>
 
-          <p className="mt-10 max-w-3xl text-2xl font-black leading-[1.15] tracking-[-0.015em] text-white/80 md:text-4xl">
-            We are building the home of Strength Age™.
+          <p className="mt-8 max-w-2xl text-xl font-light leading-snug tracking-tight text-white/70 md:text-2xl font-sans">
+            We are engineering the commercial architecture and ecosystem for <span className="text-white font-normal">Strength Age™</span>.
           </p>
 
-          <div className="mt-16 grid gap-4 md:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {["Strength Reserve™", "Warehouse OS", "Longevity Platform"].map(
               (item) => (
                 <div
                   key={item}
-                  className="rounded-[1.6rem] border border-white/10 bg-white/[0.035] p-6"
+                  className="rounded-[1rem] border border-white/5 bg-white/[0.01] p-6 transition-all duration-300 hover:bg-white/[0.02]"
                 >
-                  <div className="text-xl font-black">{item}</div>
+                  <div className="text-base font-normal tracking-wide text-white/80">{item}</div>
                 </div>
               )
             )}
           </div>
 
-          <div className="mt-20 text-[11px] font-bold tracking-[0.35em] text-white/35">
+          <div className="mt-20 text-[9px] font-medium tracking-[0.35em] text-white/30 font-sans uppercase">
             WAREHOUSE GYM · YANGMEI · TAOYUAN · TAIWAN
           </div>
         </div>
       </section>
-
-      <style>{`
-        .hero-lift-heavy {
-          font-family: "Helvetica Neue", Arial, sans-serif;
-          font-weight: 780;
-          letter-spacing: -0.02em;
-          transform: scaleX(1.22) scaleY(1.04);
-          transform-origin: left center;
-          text-transform: uppercase;
-        }
-
-        .section-title {
-          font-family: "Helvetica Neue", Arial, sans-serif;
-          font-weight: 850;
-          line-height: 1.08;
-          letter-spacing: -0.025em;
-        }
-      `}</style>
     </main>
   );
 }
