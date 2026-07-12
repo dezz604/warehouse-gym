@@ -262,10 +262,16 @@ export default function Home() {
             </h2>
 
             <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
-              Your body is aging. Your strength does not have to.
-              <br />
-              Warehouse Gym measures strength, performance and longevity as one unified system.
-            </p>
+  Your body is aging. Your strength does not have to.
+  <br />
+  Warehouse Gym measures strength, performance and longevity as one unified system.
+  <br />
+  <span className="mt-3 block text-white/45">
+    不只是健身房。Warehouse Gym 將重訓、運動表現、健康老化與數據科學整合成一套能持續進步的訓練系統。
+    年齡無法逆轉，但你能選擇可以支撐未來的身體。Warehouse Gym 透過肌力、爆發力、體能與恢復數據，
+    幫助你建立可以支撐未來的身體。
+  </span>
+</p>
 
             <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
               {[
