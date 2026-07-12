@@ -65,11 +65,9 @@ function StrengthAgeCalculator() {
   const [strength, setStrength] = useState(91);
   const [power, setPower] = useState(93);
   const [conditioning, setConditioning] = useState(88);
-  const [recovery, setRecovery] = useState(79);
 
   const result = useMemo(() => {
-    const average =
-      strength * 0.35 + power * 0.25 + conditioning * 0.25 + recovery * 0.15;
+    const average = strength * 0.45 + power * 0.3 + conditioning * 0.25;
 
     const ageReduction = Math.round(((average - 60) / 40) * 28);
     const strengthAge = Math.max(25, Math.min(90, age - ageReduction));
@@ -81,7 +79,7 @@ function StrengthAgeCalculator() {
       capacity: Math.round(average),
       delta,
     };
-  }, [age, strength, power, conditioning, recovery]);
+  }, [age, strength, power, conditioning]);
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
@@ -98,6 +96,7 @@ function StrengthAgeCalculator() {
             max={85}
             onChange={setAge}
           />
+
           <SliderRow
             label="Strength Score"
             value={strength}
@@ -105,6 +104,7 @@ function StrengthAgeCalculator() {
             max={100}
             onChange={setStrength}
           />
+
           <SliderRow
             label="Power Score"
             value={power}
@@ -112,19 +112,13 @@ function StrengthAgeCalculator() {
             max={100}
             onChange={setPower}
           />
+
           <SliderRow
             label="Conditioning Score"
             value={conditioning}
             min={30}
             max={100}
             onChange={setConditioning}
-          />
-          <SliderRow
-            label="Recovery Score"
-            value={recovery}
-            min={30}
-            max={100}
-            onChange={setRecovery}
           />
         </div>
       </div>
