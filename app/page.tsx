@@ -1,6 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Michroma } from "next/font/google";
+
+const michroma = Michroma({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 type Plan = {
   name: string;
@@ -203,19 +209,16 @@ export default function Home() {
 
         <header className="relative z-10 flex items-center justify-between">
           <div>
-            <div
-              className="text-3xl tracking-[0.2em] md:text-4xl lg:text-[42px]"
-              style={{
-                fontFamily:
-                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-              }}
-            >
-              WAREHOUSE GYM
-            </div>
-<div className="mt-3 text-[10px] uppercase tracking-[0.5em] text-white/42">
-  Strength. Performance. Longevity.
+  <div
+    className={`${michroma.className} text-[24px] uppercase tracking-[0.26em] md:text-[30px] lg:text-[36px]`}
+  >
+    WAREHOUSE GYM
+  </div>
+
+  <div className="mt-3 text-[10px] uppercase tracking-[0.48em] text-white/42">
+    Strength. Performance. Longevity.
+  </div>
 </div>
-          </div>
 
           <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
             <a href="#training">Training</a>
@@ -685,15 +688,14 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-[10px] uppercase tracking-[0.28em] text-white/35 md:flex-row">
           <div>
        <div
-  className="text-[28px] font-normal tracking-[0.28em] md:text-[34px] lg:text-[42px]"
-  style={{
-    fontFamily:
-      "'BankGothic Md BT', 'Bank Gothic Medium', 'Bank Gothic', 'Agency FB', 'Arial Narrow', sans-serif",
-  }}
+  className={`${michroma.className} text-[18px] uppercase tracking-[0.22em] text-white md:text-[22px]`}
 >
   WAREHOUSE GYM
 </div>
-            <div className="mt-1">Strength. Performance. Longevity.</div>
+
+<div className="mt-2 text-[9px] uppercase tracking-[0.36em] text-white/35">
+  Strength. Performance. Longevity.
+</div>
           </div>
 
           <div className="flex gap-8">
