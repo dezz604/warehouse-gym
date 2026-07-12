@@ -279,7 +279,7 @@ export default function Home() {
                 },
                 {
                   title: "Longevity Focus",
-                  desc: "從力量與肌肉量建立長期健康資本。",
+                  desc: "從力量，肌肉量與最大攝氧量建立長期健康資本。",
                 },
               ].map((card) => (
                 <div
@@ -363,7 +363,7 @@ export default function Home() {
             A purpose-built warehouse with everything serious lifters need to
             perform and recover.
             <br />
-            專為認真訓練而設計的倉庫式空間。
+            專為自由重量訓練而設計的空間， 盡情摔槓。
           </p>
         </div>
 
@@ -374,7 +374,7 @@ export default function Home() {
                 Warehouse Strength Floor
               </div>
               <div className="mt-1 text-xs text-white/45">
-                倉儲式力量訓練區
+                力量訓練區
               </div>
             </div>
           </div>
@@ -430,7 +430,7 @@ export default function Home() {
               strength, power, conditioning and recovery into one number people
               understand instantly.
               <br />
-              你的生日年齡固定，但你的肌力年齡可以被訓練。
+              你的生理年齡無法改變，但你的肌力年齡可以被訓練。
             </p>
           </div>
 
@@ -627,7 +627,7 @@ export default function Home() {
             </div>
 
             <p className="mt-5 max-w-md text-xs leading-relaxed text-white/45">
-              捕捉峰值力量、RFD、跳躍表現與左右不對稱，讓訓練不再靠感覺。
+              捕捉力量峰值、RFD、跳躍表現與左右不對稱，讓訓練不再靠感覺。
             </p>
 
             <div className="mt-14 grid gap-3 md:grid-cols-4">
@@ -653,7 +653,7 @@ export default function Home() {
               </div>
 
               <p className="mt-5 text-xs leading-relaxed text-white/45">
-                評估心肺與代謝能力，提升耐力與恢復力。
+                評估心肺與代謝能力，最大攝氧量vo2Max。
               </p>
             </div>
 
