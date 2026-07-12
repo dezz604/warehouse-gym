@@ -267,9 +267,11 @@ export default function Home() {
   Warehouse Gym measures strength, performance and longevity as one unified system.
   <br />
   <span className="mt-3 block text-white/45">
-    不只是健身房。Warehouse Gym 將重訓、運動表現、健康老化與數據科學整合成一套能持續進步的訓練系統。
-    年齡無法逆轉，但你能選擇可以支撐未來的身體。Warehouse Gym 透過肌力、爆發力、體能與恢復數據，
-    幫助你建立可以支撐未來的身體。
+ Warehouse Gym 不只是健身房。
+我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
+年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。
+透過肌力、爆發力、體能與恢復數據，我們幫助你建立一副能支撐未來的身體。
+
   </span>
 </p>
 
