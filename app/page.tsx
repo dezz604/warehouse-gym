@@ -352,7 +352,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEASURE TRAIN EVOLVE */}
+      {/* STRENGTH AGE CALCULATOR */}
+      <section
+        id="calculator"
+        className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
+      >
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <div className="section-eyebrow">Signature Product</div>
+
+            <h2 className="section-heading">
+              Strength Age
+              <br />
+              Calculator.
+            </h2>
+
+            <p className="section-copy mt-8 max-w-xl">
+              Not BMI. Not bodyweight. Not just InBody. Strength Age™ turns
+              strength, power, conditioning and recovery into one number people
+              understand instantly.
+              <br />
+              你的生理年齡無法改變，但你的肌力年齡可以被訓練。
+            </p>
+          </div>
+
+          <StrengthAgeCalculator />
+        </div>
+      </section>\n\n{/* MEASURE TRAIN EVOLVE */}
       <section
         id="training"
         className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
@@ -393,9 +419,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* SPACE */}
+      </section>\n\n{/* SPACE */}
       <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -473,146 +497,7 @@ export default function Home() {
     </div>
   </div>
 </div>
-      </section>
-
-      {/* STRENGTH AGE CALCULATOR */}
-      <section
-        id="calculator"
-        className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
-      >
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <div className="section-eyebrow">Signature Product</div>
-
-            <h2 className="section-heading">
-              Strength Age
-              <br />
-              Calculator.
-            </h2>
-
-            <p className="section-copy mt-8 max-w-xl">
-              Not BMI. Not bodyweight. Not just InBody. Strength Age™ turns
-              strength, power, conditioning and recovery into one number people
-              understand instantly.
-              <br />
-              你的生理年齡無法改變，但你的肌力年齡可以被訓練。
-            </p>
-          </div>
-
-          <StrengthAgeCalculator />
-        </div>
-      </section>
-
-      {/* MEMBERSHIP */}
-      <section
-        id="membership"
-        className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
-      >
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <div className="section-eyebrow">Membership</div>
-
-            <h2 className="section-heading">
-              Choose Your
-              <br />
-              Level.
-            </h2>
-          </div>
-
-          <p className="section-copy max-w-xl">
-            Flexible plans. Clear benefits. Choose what fits your goals.
-            <br />
-            從基礎自主訓練、無限使用，到個人化教練指導。
-          </p>
-        </div>
-
-        <div className="mx-auto mt-12 grid max-w-7xl gap-5 md:grid-cols-3">
-          {plans.map((plan, index) => (
-            <div
-              key={plan.name}
-              className={`rounded-xl border p-7 ${
-                index === 1
-                  ? "border-white bg-white text-black"
-                  : "border-white/12 bg-white/[0.02] text-white"
-              }`}
-            >
-              {index === 1 && (
-                <div className="mb-5 inline-flex rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                  Most Popular
-                </div>
-              )}
-
-              <div className="text-3xl font-semibold">{plan.name}</div>
-
-              <div
-                className={`mt-2 text-base ${
-                  index === 1 ? "text-black/55" : "text-white/50"
-                }`}
-              >
-                {plan.sub}
-              </div>
-
-              <div className="mt-7 space-y-4">
-                {plan.items.map((item) => (
-                  <div key={item} className="flex gap-3 text-base">
-                    <span>✓</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                type="button"
-                className={`mt-9 w-full rounded-full border px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] ${
-                  index === 1
-                    ? "border-black text-black"
-                    : "border-white/20 text-white"
-                }`}
-              >
-                {plan.cta}
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ENTER */}
-      <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <h2 className="section-heading">
-            Enter The
-            <br />
-            Warehouse.
-          </h2>
-
-          <div>
-            <p className="section-copy max-w-xl">
-              This is more than a gym. This is where strength is built, and
-              legacy begins.
-              <br />
-              這不是健身房。這是力量資產建立的開始。
-            </p>
-
-            <div className="mt-8 flex gap-4">
-              <a
-                href="#membership"
-                className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-black"
-              >
-                Join Now
-              </a>
-
-              <a
-                href="#calculator"
-                className="rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white"
-              >
-                Book A Tour
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRAIN FOR WHAT LASTS */}
+      </section>\n\n{/* TRAIN FOR WHAT LASTS */}
       <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -647,9 +532,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* DATA */}
+      </section>\n\n{/* DATA */}
       <section
         id="technology"
         className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
@@ -731,11 +614,112 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section>\n\n{/* ENTER */}
+      <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <h2 className="section-heading">
+            Enter The
+            <br />
+            Warehouse.
+          </h2>
 
+          <div>
+            <p className="section-copy max-w-xl">
+              This is more than a gym. This is where strength is built, and
+              legacy begins.
+              <br />
+              這不是健身房。這是力量資產建立的開始。
+            </p>
 
+            <div className="mt-8 flex gap-4">
+              <a
+                href="#membership"
+                className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-black"
+              >
+                Join Now
+              </a>
 
-<footer className="mt-72 border-t border-white/10 px-6 py-24 md:px-14 lg:px-20">
+              <a
+                href="#calculator"
+                className="rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white"
+              >
+                Book A Tour
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>\n\n{/* MEMBERSHIP */}
+      <section
+        id="membership"
+        className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"
+      >
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <div className="section-eyebrow">Membership</div>
+
+            <h2 className="section-heading">
+              Choose Your
+              <br />
+              Level.
+            </h2>
+          </div>
+
+          <p className="section-copy max-w-xl">
+            Flexible plans. Clear benefits. Choose what fits your goals.
+            <br />
+            從基礎自主訓練、無限使用，到個人化教練指導。
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-7xl gap-5 md:grid-cols-3">
+          {plans.map((plan, index) => (
+            <div
+              key={plan.name}
+              className={`rounded-xl border p-7 ${
+                index === 1
+                  ? "border-white bg-white text-black"
+                  : "border-white/12 bg-white/[0.02] text-white"
+              }`}
+            >
+              {index === 1 && (
+                <div className="mb-5 inline-flex rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                  Most Popular
+                </div>
+              )}
+
+              <div className="text-3xl font-semibold">{plan.name}</div>
+
+              <div
+                className={`mt-2 text-base ${
+                  index === 1 ? "text-black/55" : "text-white/50"
+                }`}
+              >
+                {plan.sub}
+              </div>
+
+              <div className="mt-7 space-y-4">
+                {plan.items.map((item) => (
+                  <div key={item} className="flex gap-3 text-base">
+                    <span>✓</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className={`mt-9 w-full rounded-full border px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] ${
+                  index === 1
+                    ? "border-black text-black"
+                    : "border-white/20 text-white"
+                }`}
+              >
+                {plan.cta}
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>\n\n<footer className="mt-72 border-t border-white/10 px-6 py-24 md:px-14 lg:px-20">
   <div className="mx-auto max-w-7xl">
     {/* TOP ROW */}
     <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
@@ -809,9 +793,7 @@ export default function Home() {
       </div>
     </div>
   </div>
-</footer>
-
-      <style>{`
+</footer>\n\n<style>{`
         body {
           background: #000;
         }
