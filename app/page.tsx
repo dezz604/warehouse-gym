@@ -757,13 +757,13 @@ export default function Home() {
           color: rgba(255, 255, 255, 0.58);
         }
 
-        .section-heading {
-          font-size: clamp(3.4rem, 6vw, 6rem);
-          line-height: 0.9;
-          letter-spacing: -0.07em;
-          font-weight: 800;
-          text-transform: uppercase;
-        }
+   .section-heading {
+  font-size: clamp(3.2rem, 5.6vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 650;
+  text-transform: uppercase;
+}
 
         .facility-card {
           display: flex;
