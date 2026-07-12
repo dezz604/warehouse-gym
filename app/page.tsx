@@ -220,7 +220,7 @@ export default function Home() {
   </div>
 </div>
 
-          <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
+          <nav className="hidden gap-10 text-[13px] uppercase tracking-[0.2em] text-white/55 lg:flex">
             <a href="#training">Training</a>
             <a href="#calculator">Strength Age</a>
             <a href="#technology">Technology</a>
