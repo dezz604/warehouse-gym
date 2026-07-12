@@ -212,10 +212,9 @@ export default function Home() {
             >
               WAREHOUSE GYM
             </div>
-
-            <div className="mt-2 text-[10px] uppercase tracking-[0.42em] text-white/42">
-              Strength. Performance. Longevity.
-            </div>
+<div className="mt-3 text-[10px] uppercase tracking-[0.5em] text-white/42">
+  Strength. Performance. Longevity.
+</div>
           </div>
 
           <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
@@ -685,15 +684,15 @@ export default function Home() {
       <footer className="px-6 py-10 md:px-14 lg:px-20">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-[10px] uppercase tracking-[0.28em] text-white/35 md:flex-row">
           <div>
-            <div
-              className="text-white"
-              style={{
-                fontFamily:
-                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-              }}
-            >
-              Warehouse Gym
-            </div>
+       <div
+  className="text-[28px] font-normal tracking-[0.28em] md:text-[34px] lg:text-[42px]"
+  style={{
+    fontFamily:
+      "'BankGothic Md BT', 'Bank Gothic Medium', 'Bank Gothic', 'Agency FB', 'Arial Narrow', sans-serif",
+  }}
+>
+  WAREHOUSE GYM
+</div>
             <div className="mt-1">Strength. Performance. Longevity.</div>
           </div>
 
