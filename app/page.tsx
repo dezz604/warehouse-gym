@@ -281,7 +281,7 @@ export default function Home() {
               Taiwan Strength & Longevity Lab
             </div>
 
-  <h1
+<h1
   className="max-w-[820px] text-[15.2vw] font-normal uppercase leading-[0.76] tracking-[-0.075em] md:text-[9.8vw] lg:text-[6.25vw]"
   style={{
     fontFamily:
@@ -291,14 +291,19 @@ export default function Home() {
   }}
 >
   <span className="block text-white tracking-normal">
-  <span className="inline-block">L</span>
-  <span className="inline-block ml-[0.10em]">I</span>
-  <span className="inline-block ml-[-0.08em]">F</span>
-  <span className="inline-block ml-[-0.10em]">T</span>
-</span>
+    <span className="inline-block">L</span>
+    <span className="inline-block ml-[0.10em]">I</span>
+    <span className="inline-block ml-[-0.14em]">F</span>
+    <span className="inline-block ml-[-0.10em]">T</span>
+  </span>
+
+  <span className="block text-white tracking-[-0.075em]">
+    HEAVY.
+  </span>
 </h1>
+
 <h2
-  className={`${michroma.className} mt-6 max-w-[980px] text-[9vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[6.2vw] lg:text-[4.1vw]`}
+  className={`${michroma.className} mt-8 max-w-[980px] text-[8.4vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[5.8vw] lg:text-[3.8vw]`}
   style={{
     WebkitTextStroke: "1.1px rgba(255,255,255,.5)",
   }}
