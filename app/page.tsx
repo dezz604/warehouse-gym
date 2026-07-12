@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 type Plan = {
   name: string;
@@ -19,37 +19,6 @@ type MethodItem = {
   title: string;
   desc: string;
 };
-
-function RollingStrengthAge() {
-  const steps = [62, 58, 51, 44, 34];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index >= steps.length - 1) return;
-
-    const timer = setTimeout(() => {
-      setIndex((prev) => prev + 1);
-    }, 650);
-
-    return () => clearTimeout(timer);
-  }, [index]);
-
-  return (
-    <div>
-      <div className="text-xs uppercase tracking-[0.22em] text-white/35">
-        Strength Age
-      </div>
-
-      <div className="mt-2 text-7xl font-light tracking-[-0.06em] md:text-8xl">
-        {steps[index]}
-      </div>
-
-      <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/30">
-        {index === steps.length - 1 ? "Strength Age™" : "Calculating"}
-      </div>
-    </div>
-  );
-}
 
 function SliderRow({
   label,
@@ -116,45 +85,11 @@ function StrengthAgeCalculator() {
         </div>
 
         <div className="space-y-5">
-          <SliderRow
-            label="Chronological Age"
-            value={age}
-            min={18}
-            max={85}
-            onChange={setAge}
-          />
-
-          <SliderRow
-            label="Strength Score"
-            value={strength}
-            min={30}
-            max={100}
-            onChange={setStrength}
-          />
-
-          <SliderRow
-            label="Power Score"
-            value={power}
-            min={30}
-            max={100}
-            onChange={setPower}
-          />
-
-          <SliderRow
-            label="Conditioning Score"
-            value={conditioning}
-            min={30}
-            max={100}
-            onChange={setConditioning}
-          />
-
-          <SliderRow
-            label="Recovery Score"
-            value={recovery}
-            min={30}
-            max={100}
-            onChange={setRecovery}
-          />
+          <SliderRow label="Chronological Age" value={age} min={18} max={85} onChange={setAge} />
+          <SliderRow label="Strength Score" value={strength} min={30} max={100} onChange={setStrength} />
+          <SliderRow label="Power Score" value={power} min={30} max={100} onChange={setPower} />
+          <SliderRow label="Conditioning Score" value={conditioning} min={30} max={100} onChange={setConditioning} />
+          <SliderRow label="Recovery Score" value={recovery} min={30} max={100} onChange={setRecovery} />
         </div>
       </div>
 
@@ -232,22 +167,10 @@ export default function Home() {
   ];
 
   const training: SimpleCard[] = [
-    {
-      title: "Strength",
-      desc: "打造更強的力量基礎。",
-    },
-    {
-      title: "Performance",
-      desc: "更快、更強、更有效。",
-    },
-    {
-      title: "Longevity",
-      desc: "延長健康壽命，享受更好的生活。",
-    },
-    {
-      title: "AI Assessment",
-      desc: "AI 追蹤評估，讓進步更具體。",
-    },
+    { title: "Strength", desc: "打造更強的力量基礎。" },
+    { title: "Performance", desc: "更快、更強、更有效。" },
+    { title: "Longevity", desc: "延長健康壽命，享受更好的生活。" },
+    { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
   ];
 
   const plans: Plan[] = [
@@ -260,13 +183,13 @@ export default function Home() {
     {
       name: "Unlimited",
       sub: "Full access",
-      items: ["無限次訓練", "專業評估", "恢復追蹤", "團體課程", "優先預約"],
+      items: ["無限次訓練", "高級評估", "恢復追蹤", "團體課程", "優先預約"],
       cta: "START 7-DAY TRIAL",
     },
     {
       name: "Coached",
       sub: "Structured progression",
-      items: ["一對一教練指導", "個人化訓練計劃", "周期化訓練", "專業評估追蹤"],
+      items: ["一對一教練指導", "個性化訓練計劃", "周期化訓練", "專業評估追蹤"],
       cta: "APPLY NOW",
     },
   ];
@@ -275,13 +198,13 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
       {/* HERO */}
       <section className="relative min-h-screen border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_22%,rgba(255,255,255,0.08),transparent_30%),linear-gradient(135deg,#111_0%,#030303_50%,#000_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,0.08),transparent_30%),linear-gradient(135deg,#111_0%,#030303_50%,#000_100%)]" />
         <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
         <header className="relative z-10 flex items-center justify-between">
           <div>
             <div
-              className="text-xl tracking-[0.18em] md:text-2xl"
+              className="text-3xl tracking-[0.2em] md:text-4xl lg:text-[42px]"
               style={{
                 fontFamily:
                   "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
@@ -290,7 +213,7 @@ export default function Home() {
               WAREHOUSE GYM
             </div>
 
-            <div className="mt-1 text-[9px] uppercase tracking-[0.32em] text-white/38">
+            <div className="mt-2 text-[10px] uppercase tracking-[0.42em] text-white/42">
               Strength. Performance. Longevity.
             </div>
           </div>
@@ -306,45 +229,45 @@ export default function Home() {
             href="#calculator"
             className="rounded-full border border-white/25 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
           >
-            Join Now
+            Book Test
           </a>
         </header>
 
-        <div className="relative z-10 flex min-h-[82vh] items-center">
-          <div className="max-w-5xl">
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-  Taiwan Strength & Longevity Lab
-</div>
+        <div className="relative z-10 flex min-h-[82vh] items-center pt-10">
+          <div className="w-full max-w-6xl">
+            <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/35">
+              Taiwan Strength & Longevity Lab
             </div>
 
- <h1
-  className="text-[15vw] font-normal uppercase leading-[0.84] tracking-[-0.045em] md:text-[10vw] lg:text-[6.6vw]"
-  style={{
-    fontFamily:
-      "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-  }}
->
-  <span className="block text-white">LIFT</span>
-  <span className="block text-white">HEAVY.</span>
-  <span
-    className="block text-transparent"
-    style={{
-      WebkitTextStroke: "1.2px rgba(255,255,255,.52)",
-    }}
-  >
-    STAY YOUNG.
-  </span>
-</h1>
+            <h1
+              className="max-w-[980px] text-[16vw] font-normal uppercase leading-[0.86] tracking-[-0.035em] md:text-[10.5vw] lg:text-[6.9vw]"
+              style={{
+                fontFamily:
+                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+              }}
+            >
+              <span className="block text-white">LIFT</span>
+              <span className="block text-white">HEAVY.</span>
+            </h1>
 
-            <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-              We use data, science and world-class equipment to help you build
-              strength, performance and longevity that last a lifetime.
+            <h2
+              className="mt-5 max-w-[920px] text-[12vw] font-normal uppercase leading-[0.92] tracking-[-0.045em] text-transparent md:text-[7.5vw] lg:text-[4.9vw]"
+              style={{
+                fontFamily:
+                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+                WebkitTextStroke: "1px rgba(255,255,255,.48)",
+              }}
+            >
+              STAY YOUNG.
+            </h2>
+
+            <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
+              Your body is aging. Your strength does not have to.
               <br />
-              年紀無法逆轉，但你能選擇可以支撐未來的身體。
+              Warehouse Gym measures strength, performance and longevity as one unified system.
             </p>
 
-            <div className="mt-10 grid max-w-5xl gap-4 md:grid-cols-3">
+            <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
               {[
                 {
                   title: "Data Driven",
@@ -361,10 +284,10 @@ export default function Home() {
               ].map((card) => (
                 <div
                   key={card.title}
-                  className="rounded-xl border border-white/12 bg-white/[0.025] p-5"
+                  className="min-h-[92px] rounded-2xl border border-white/14 bg-white/[0.025] p-6"
                 >
-                  <div className="text-sm font-semibold">{card.title}</div>
-                  <p className="mt-2 text-xs leading-relaxed text-white/45">
+                  <div className="text-base font-semibold">{card.title}</div>
+                  <p className="mt-3 text-sm leading-relaxed text-white/50">
                     {card.desc}
                   </p>
                 </div>
