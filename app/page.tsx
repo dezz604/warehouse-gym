@@ -260,13 +260,13 @@ export default function Home() {
     {
       name: "Unlimited",
       sub: "Full access",
-      items: ["無限次訓練", "高級評估", "恢復追蹤", "團體課程", "優先預約"],
+      items: ["無限次訓練", "專業評估", "恢復追蹤", "團體課程", "優先預約"],
       cta: "START 7-DAY TRIAL",
     },
     {
       name: "Coached",
       sub: "Structured progression",
-      items: ["一對一教練指導", "個性化訓練計劃", "周期化訓練", "專業評估追蹤"],
+      items: ["一對一教練指導", "個人化訓練計劃", "周期化訓練", "專業評估追蹤"],
       cta: "APPLY NOW",
     },
   ];
@@ -313,27 +313,29 @@ export default function Home() {
         <div className="relative z-10 flex min-h-[82vh] items-center">
           <div className="max-w-5xl">
             <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              The Warehouse Method
+              <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
+  Taiwan Strength & Longevity Lab
+</div>
             </div>
 
-            <h1
-              className="text-[15vw] font-normal uppercase leading-[0.84] tracking-[-0.045em] md:text-[10vw] lg:text-[6.6vw]"
-              style={{
-                fontFamily:
-                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-              }}
-            >
-              <span className="block">Age is real.</span>
-              <span className="block">Weakness is</span>
-              <span
-                className="block text-transparent"
-                style={{
-                  WebkitTextStroke: "1.2px rgba(255,255,255,.52)",
-                }}
-              >
-                Optional.
-              </span>
-            </h1>
+ <h1
+  className="text-[15vw] font-normal uppercase leading-[0.84] tracking-[-0.045em] md:text-[10vw] lg:text-[6.6vw]"
+  style={{
+    fontFamily:
+      "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+  }}
+>
+  <span className="block text-white">LIFT</span>
+  <span className="block text-white">HEAVY.</span>
+  <span
+    className="block text-transparent"
+    style={{
+      WebkitTextStroke: "1.2px rgba(255,255,255,.52)",
+    }}
+  >
+    STAY YOUNG.
+  </span>
+</h1>
 
             <p className="mt-8 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
               We use data, science and world-class equipment to help you build
