@@ -730,8 +730,7 @@ export default function Home() {
 
 
 
-
-<footer className="mt-32 border-t border-white/10 px-6 py-16 md:px-14 lg:px-20">
+<footer className="mt-72 border-t border-white/10 px-6 py-24 md:px-14 lg:px-20">
   <div className="mx-auto max-w-7xl">
     {/* TOP ROW */}
     <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
