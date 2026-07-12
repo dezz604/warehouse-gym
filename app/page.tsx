@@ -396,35 +396,63 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-3">
-          <div className="facility-card min-h-[360px] md:col-span-1 md:row-span-2">
-            <div className="mt-auto">
-              <div className="facility-title">Warehouse Strength Floor</div>
-              <div className="facility-desc">力量訓練區</div>
-            </div>
-          </div>
+<div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-3">
+  <div className="facility-card min-h-[360px] md:col-span-1 md:row-span-2">
+    <div className="mt-auto">
+      <div className="facility-title">Warehouse Strength Floor</div>
+      <div className="facility-desc">自由重量訓練區</div>
+    </div>
+  </div>
 
-          <div className="facility-card min-h-[190px]">
-            <div className="mt-auto">
-              <div className="facility-title">Recovery Corner</div>
-              <div className="facility-desc">恢復與放鬆區</div>
-            </div>
-          </div>
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Machine Training Zone</div>
+      <div className="facility-desc">固定式器械區</div>
+    </div>
+  </div>
 
-          <div className="facility-card min-h-[190px]">
-            <div className="mt-auto">
-              <div className="facility-title">Performance Coaching</div>
-              <div className="facility-desc">表現提升指導</div>
-            </div>
-          </div>
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Group Class Studio</div>
+      <div className="facility-desc">團課教室</div>
+    </div>
+  </div>
 
-          <div className="facility-card min-h-[190px] md:col-span-2">
-            <div className="mt-auto">
-              <div className="facility-title">Community</div>
-              <div className="facility-desc">強者社群 / 共同進步</div>
-            </div>
-          </div>
-        </div>
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Yoga Studio</div>
+      <div className="facility-desc">瑜珈教室</div>
+    </div>
+  </div>
+
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Muay Thai Zone</div>
+      <div className="facility-desc">泰拳區</div>
+    </div>
+  </div>
+
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Recovery Corner</div>
+      <div className="facility-desc">恢復與放鬆區</div>
+    </div>
+  </div>
+
+  <div className="facility-card min-h-[190px]">
+    <div className="mt-auto">
+      <div className="facility-title">Performance Coaching</div>
+      <div className="facility-desc">表現提升指導</div>
+    </div>
+  </div>
+
+  <div className="facility-card min-h-[190px] md:col-span-2">
+    <div className="mt-auto">
+      <div className="facility-title">Community</div>
+      <div className="facility-desc">強者社群 / 共同進步</div>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* STRENGTH AGE CALCULATOR */}
