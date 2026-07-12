@@ -728,28 +728,53 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="px-6 py-10 md:px-14 lg:px-20">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-xs uppercase tracking-[0.22em] text-white/45 md:flex-row">
-          <div>
-            <div
-              className={`${michroma.className} text-lg uppercase tracking-[0.2em] text-white md:text-xl`}
-            >
-              WAREHOUSE GYM
-            </div>
+<footer className="border-t border-white/10 px-6 py-14 md:px-14 lg:px-20">
+  <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+    {/* LEFT LOGO */}
+    <div>
+      <div
+        className={`${michroma.className} text-xl uppercase tracking-[0.22em] text-white md:text-2xl`}
+      >
+        WAREHOUSE GYM
+      </div>
 
-            <div className="mt-2 text-[10px] uppercase tracking-[0.32em] text-white/35">
-              Strength. Performance. Longevity.
-            </div>
+      <div className="mt-3 text-[11px] uppercase tracking-[0.34em] text-white/38">
+        Strength. Performance. Longevity.
+      </div>
+    </div>
+
+    {/* CENTER ADDRESS */}
+    <div className="border-l border-white/20 pl-8">
+      <div className="flex items-center gap-3 text-sm leading-relaxed text-white/58">
+        <span className="text-xl">🇹🇼</span>
+        <div>
+          <div className="text-[11px] uppercase tracking-[0.26em] text-white/35">
+            Republic of China
           </div>
-
-          <div className="flex gap-8">
-            <a href="#training">Training</a>
-            <a href="#membership">Membership</a>
-            <a href="#technology">Technology</a>
-            <a href="#calculator">Strength Age</a>
+          <div className="mt-1 text-base tracking-[0.08em] text-white/70">
+            中華民國・台灣・桃園市楊梅區秀才路 162 號
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+
+    {/* RIGHT NAV */}
+    <nav className="flex flex-wrap gap-x-10 gap-y-4 text-[12px] uppercase tracking-[0.22em] text-white/48 lg:justify-end">
+      <a href="#training" className="hover:text-white">
+        Training
+      </a>
+      <a href="#membership" className="hover:text-white">
+        Membership
+      </a>
+      <a href="#technology" className="hover:text-white">
+        Technology
+      </a>
+      <a href="#calculator" className="hover:text-white">
+        Strength Age
+      </a>
+    </nav>
+  </div>
+</footer>
 
       <style>{`
         body {
