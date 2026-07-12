@@ -728,30 +728,46 @@ export default function Home() {
         </div>
       </section>
 
-<footer className="border-t border-white/10 px-6 py-14 md:px-14 lg:px-20">
-  <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+<footer className="border-t border-white/10 px-6 py-16 md:px-14 lg:px-20">
+  <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.95fr_1.25fr_0.8fr] lg:items-center">
     {/* LEFT LOGO */}
     <div>
       <div
-        className={`${michroma.className} text-xl uppercase tracking-[0.22em] text-white md:text-2xl`}
+        className={`${michroma.className} text-[22px] uppercase tracking-[0.2em] text-white md:text-[26px] lg:text-[30px]`}
       >
         WAREHOUSE GYM
       </div>
 
-      <div className="mt-3 text-[11px] uppercase tracking-[0.34em] text-white/38">
+      <div className="mt-3 text-[10px] uppercase tracking-[0.34em] text-white/38">
         Strength. Performance. Longevity.
       </div>
     </div>
 
     {/* CENTER ADDRESS */}
-    <div className="border-l border-white/20 pl-8">
-      <div className="flex items-center gap-3 text-sm leading-relaxed text-white/58">
-        <span className="text-xl">🇹🇼</span>
+    <div className="border-l border-white/15 pl-8">
+      <div className="flex items-start gap-5">
+        {/* Taiwan Flag */}
+        <div className="mt-1 h-7 w-10 shrink-0 overflow-hidden rounded-sm border border-white/20 shadow-sm">
+          <svg viewBox="0 0 36 24" className="h-full w-full">
+            <rect width="36" height="24" fill="#FE0000" />
+            <rect width="18" height="12" fill="#000095" />
+            <circle cx="9" cy="6" r="3.3" fill="#FFFFFF" />
+            <g stroke="#FFFFFF" strokeWidth="0.7" strokeLinecap="round">
+              <line x1="9" y1="1.1" x2="9" y2="10.9" />
+              <line x1="4.1" y1="6" x2="13.9" y2="6" />
+              <line x1="5.55" y1="2.55" x2="12.45" y2="9.45" />
+              <line x1="12.45" y1="2.55" x2="5.55" y2="9.45" />
+            </g>
+            <circle cx="9" cy="6" r="1.55" fill="#000095" />
+          </svg>
+        </div>
+
         <div>
-          <div className="text-[11px] uppercase tracking-[0.26em] text-white/35">
+          <div className="text-[11px] uppercase tracking-[0.3em] text-white/35">
             Republic of China
           </div>
-          <div className="mt-1 text-base tracking-[0.08em] text-white/70">
+
+          <div className="mt-2 text-base leading-relaxed tracking-[0.08em] text-white/72">
             中華民國・台灣・桃園市楊梅區秀才路 162 號
           </div>
         </div>
@@ -759,17 +775,20 @@ export default function Home() {
     </div>
 
     {/* RIGHT NAV */}
-    <nav className="flex flex-wrap gap-x-10 gap-y-4 text-[12px] uppercase tracking-[0.22em] text-white/48 lg:justify-end">
-      <a href="#training" className="hover:text-white">
+    <nav className="grid grid-cols-2 gap-x-10 gap-y-5 text-[12px] uppercase tracking-[0.22em] text-white/52 lg:justify-self-end">
+      <a href="#training" className="transition hover:text-white">
         Training
       </a>
-      <a href="#membership" className="hover:text-white">
+
+      <a href="#membership" className="transition hover:text-white">
         Membership
       </a>
-      <a href="#technology" className="hover:text-white">
+
+      <a href="#technology" className="transition hover:text-white">
         Technology
       </a>
-      <a href="#calculator" className="hover:text-white">
+
+      <a href="#calculator" className="transition hover:text-white">
         Strength Age
       </a>
     </nav>
