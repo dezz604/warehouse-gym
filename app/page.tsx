@@ -265,7 +265,7 @@ export default function Home() {
           </a>
         </header>
 
-        <div className="relative z-10 flex min-h-[82vh] items-center pt-10">
+        <div className="relative z-10 flex min-h-[82vh] items-center pt-28 md:pt-32 lg:pt-36">
           <div className="w-full max-w-6xl">
             <div className="mb-6 text-[13px] font-semibold uppercase tracking-[0.26em] text-white/50">
               Taiwan Strength & Longevity Lab
