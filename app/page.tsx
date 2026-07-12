@@ -295,7 +295,13 @@ export default function Home() {
     transformOrigin: "left center",
   }}
 >
-  <span className="block text-white tracking-[-0.035em]">LIFT</span>
+  <span className="block text-white">
+    <span className="inline-block">L</span>
+    <span className="inline-block ml-[0.08em]">I</span>
+    <span className="inline-block ml-[0.02em]">F</span>
+    <span className="inline-block ml-[-0.03em]">T</span>
+  </span>
+
   <span className="block text-white">HEAVY.</span>
 </h1>
 <h2
