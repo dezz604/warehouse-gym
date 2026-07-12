@@ -728,6 +728,9 @@ export default function Home() {
         </div>
       </section>
 
+
+      
+
 <footer className="border-t border-white/10 px-6 py-16 md:px-14 lg:px-20">
   <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.25fr_0.9fr] lg:items-start">
     {/* LEFT LOGO */}
