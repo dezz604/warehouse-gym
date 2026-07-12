@@ -192,7 +192,7 @@ export default function Home() {
     },
     {
       num: "02",
-      title: "Grip Strength",
+      title: "Maximal Strength",
       desc: "反映全身力量儲備與神經肌肉狀態。",
     },
     {
