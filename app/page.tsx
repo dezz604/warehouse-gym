@@ -271,12 +271,7 @@ export default function Home() {
             <a href="#membership">Membership</a>
           </nav>
 
-          <a
-            href="#calculator"
-            className="rounded-full border border-white/25 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
-          >
-            Book Test
-          </a>
+    
         </header>
 
         <div className="relative z-10 flex min-h-[82vh] items-center pt-36 md:pt-40 lg:pt-44">
@@ -295,14 +290,12 @@ export default function Home() {
     transformOrigin: "left center",
   }}
 >
-  <span className="block text-white">
-    <span className="inline-block">L</span>
-    <span className="inline-block ml-[0.08em]">I</span>
-    <span className="inline-block ml-[0.02em]">F</span>
-    <span className="inline-block ml-[-0.03em]">T</span>
-  </span>
-
-  <span className="block text-white">HEAVY.</span>
+  <span className="block text-white tracking-normal">
+  <span className="inline-block">L</span>
+  <span className="inline-block ml-[0.10em]">I</span>
+  <span className="inline-block ml-[-0.08em]">F</span>
+  <span className="inline-block ml-[-0.10em]">T</span>
+</span>
 </h1>
 <h2
   className={`${michroma.className} mt-6 max-w-[980px] text-[9vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[6.2vw] lg:text-[4.1vw]`}
