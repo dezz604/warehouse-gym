@@ -76,7 +76,11 @@ export default function Home() {
 
         <header className="relative z-10 flex items-center justify-between border-b border-white/5 pb-6">
           <div>
-            <div className="text-xl font-medium tracking-[0.2em] font-sans sm:text-2xl">
+            {/* 🛠️ 左上角 Logo 區：維持 BankGothic Md BT */}
+            <div 
+              className="text-2xl tracking-[0.18em] sm:text-[28px]"
+              style={{ fontFamily: "'BankGothic Md BT', 'Bank Gothic Medium', sans-serif" }}
+            >
               WAREHOUSE GYM
             </div>
             <div className="mt-1.5 text-[9px] font-medium tracking-[0.4em] text-white/40 font-sans uppercase">
@@ -99,40 +103,35 @@ export default function Home() {
           </a>
         </header>
 
-        <div className="relative z-10 grid my-auto min-h-[75vh] items-center gap-16 lg:grid-cols-[1fr_1fr] pt-8 pb-12">
+        <div className="relative z-10 grid my-auto min-h-[75vh] items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] pt-8 pb-12">
           <div className="flex flex-col justify-center">
-            <div className="mb-6 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
+            <div className="mb-8 flex items-center gap-4 text-[10px] font-semibold tracking-[0.3em] text-white/30">
               <span className="h-px w-8 bg-white/20" />
               TAIWAN STRENGTH & LONGEVITY LAB
             </div>
 
-            {/* 標題優化區塊：改用原生 fontStretch 緊縮文字本身，不影響排版寬度 */}
-            <div className="w-full">
+            {/* 🛠️ 正中央大標題：軍事工業風 DIN Schablonierschrift */}
+            <div className="w-full flex flex-col items-start select-none">
               <h1 
-                className="text-[17vw] leading-[0.82] font-black tracking-[-0.05em] uppercase select-none sm:text-[13vw] md:text-[10vw] lg:text-[7.8vw]"
-                style={{
-                  fontFamily: "Impact, 'Arial Black', sans-serif",
-                  fontStretch: "75%",
+                className="text-[16vw] sm:text-[12vw] md:text-[9.5vw] lg:text-[7vw] font-normal leading-[0.85] tracking-wide uppercase"
+                style={{ 
+                  fontFamily: "'DIN Schablonierschrift', sans-serif" 
                 }}
               >
-                <span className="block text-white">LIFT</span>
-                <span className="block text-white">HEAVY.</span>
+                <div className="text-white">LIFT</div>
+                <div className="text-white">HEAVY.</div>
+                <div
+                  style={{
+                    WebkitTextStroke: "1px rgba(255, 255, 255, 0.4)", // 調整為 1px 與 0.4 透明度，呈現極細緻外框
+                    color: "transparent",
+                  }}
+                >
+                  STAY YOUNG.
+                </div>
               </h1>
-
-              <div
-                className="mt-4 text-[9vw] font-black leading-[1] tracking-[-0.04em] sm:text-[7.5vw] md:text-[5.5vw] lg:text-[4.2vw]"
-                style={{
-                  fontFamily: "Impact, 'Arial Black', sans-serif",
-                  fontStretch: "75%",
-                  WebkitTextStroke: "1px rgba(255, 255, 255, 0.35)",
-                  color: "transparent",
-                }}
-              >
-                STAY YOUNG.
-              </div>
             </div>
 
-            <p className="mt-8 max-w-md text-sm md:text-base leading-relaxed text-white/50 font-normal tracking-wide">
+            <p className="mt-10 max-w-md text-sm md:text-base leading-relaxed text-white/50 font-normal tracking-wide">
               Your body is aging. Your strength does not have to.
               <br />
               Warehouse Gym measures strength, performance and longevity as one unified system.
