@@ -295,10 +295,9 @@ export default function Home() {
     transformOrigin: "left center",
   }}
 >
-  <span className="block text-white">LIFT</span>
+  <span className="block text-white tracking-[-0.035em]">LIFT</span>
   <span className="block text-white">HEAVY.</span>
 </h1>
-
 <h2
   className={`${michroma.className} mt-6 max-w-[980px] text-[9vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[6.2vw] lg:text-[4.1vw]`}
   style={{
