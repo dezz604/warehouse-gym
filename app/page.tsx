@@ -290,12 +290,16 @@ export default function Home() {
     transformOrigin: "left center",
   }}
 >
- <span className="block text-white tracking-normal">
-  <span className="inline-block">L</span>
-  <span className="inline-block ml-[0.10em]">I</span>
-  <span className="inline-block ml-[-0.14em]">F</span>
-  <span className="inline-block ml-[0.06em]">T</span>
-</span>
+  <span className="block text-white tracking-normal">
+    <span className="inline-block">L</span>
+    <span className="inline-block ml-[0.10em]">I</span>
+    <span className="inline-block ml-[-0.14em]">F</span>
+    <span className="inline-block ml-[0.06em]">T</span>
+  </span>
+
+  <span className="block text-white tracking-[-0.075em]">
+    HEAVY.
+  </span>
 </h1>
 
 <h2
