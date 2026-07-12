@@ -282,16 +282,14 @@ export default function Home() {
               <span className="block text-white">HEAVY.</span>
             </h1>
 
-            <h2
-              className="mt-5 max-w-[920px] text-[12vw] font-normal uppercase leading-[0.92] tracking-[-0.045em] text-transparent md:text-[7.5vw] lg:text-[4.9vw]"
-              style={{
-                fontFamily:
-                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-                WebkitTextStroke: "1px rgba(255,255,255,.48)",
-              }}
-            >
-              STAY YOUNG.
-            </h2>
+            <<h2
+  className={`${michroma.className} mt-6 max-w-[980px] text-[9vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[6.2vw] lg:text-[4.1vw]`}
+  style={{
+    WebkitTextStroke: "1.1px rgba(255,255,255,.5)",
+  }}
+>
+  STAY YOUNG.
+</h2>
 
             <p className="mt-9 max-w-3xl text-lg leading-relaxed text-white/64 md:text-xl">
               Your body is aging. Your strength does not have to.
