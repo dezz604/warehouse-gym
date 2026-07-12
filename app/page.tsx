@@ -41,11 +41,11 @@ function SliderRow({
 }) {
   return (
     <div>
-      <div className="mb-2 flex items-center justify-between">
-        <div className="text-xs uppercase tracking-[0.18em] text-white/45">
+      <div className="mb-3 flex items-center justify-between">
+        <div className="text-sm uppercase tracking-[0.16em] text-white/55">
           {label}
         </div>
-        <div className="font-mono text-sm text-white/80">{value}</div>
+        <div className="font-mono text-base text-white/85">{value}</div>
       </div>
 
       <input
@@ -84,29 +84,59 @@ function StrengthAgeCalculator() {
   }, [age, strength, power, conditioning, recovery]);
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[1fr_0.85fr]">
-      <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-6">
-        <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/35">
+    <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
+      <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-7">
+        <div className="mb-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
           Strength Age Calculator
         </div>
 
-        <div className="space-y-5">
-          <SliderRow label="Chronological Age" value={age} min={18} max={85} onChange={setAge} />
-          <SliderRow label="Strength Score" value={strength} min={30} max={100} onChange={setStrength} />
-          <SliderRow label="Power Score" value={power} min={30} max={100} onChange={setPower} />
-          <SliderRow label="Conditioning Score" value={conditioning} min={30} max={100} onChange={setConditioning} />
-          <SliderRow label="Recovery Score" value={recovery} min={30} max={100} onChange={setRecovery} />
+        <div className="space-y-6">
+          <SliderRow
+            label="Chronological Age"
+            value={age}
+            min={18}
+            max={85}
+            onChange={setAge}
+          />
+          <SliderRow
+            label="Strength Score"
+            value={strength}
+            min={30}
+            max={100}
+            onChange={setStrength}
+          />
+          <SliderRow
+            label="Power Score"
+            value={power}
+            min={30}
+            max={100}
+            onChange={setPower}
+          />
+          <SliderRow
+            label="Conditioning Score"
+            value={conditioning}
+            min={30}
+            max={100}
+            onChange={setConditioning}
+          />
+          <SliderRow
+            label="Recovery Score"
+            value={recovery}
+            min={30}
+            max={100}
+            onChange={setRecovery}
+          />
         </div>
       </div>
 
-      <div className="rounded-[1.4rem] border border-white/10 bg-white p-6 text-black">
-        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-black/45">
+      <div className="rounded-[1.4rem] border border-white/10 bg-white p-7 text-black">
+        <div className="text-sm font-black uppercase tracking-[0.22em] text-black/45">
           Result Preview
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4">
+        <div className="mt-8 grid grid-cols-2 gap-5">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-black/45">
+            <div className="text-sm uppercase tracking-[0.16em] text-black/45">
               Body Age
             </div>
             <div className="mt-2 text-6xl font-light tracking-[-0.08em]">
@@ -115,7 +145,7 @@ function StrengthAgeCalculator() {
           </div>
 
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-black/45">
+            <div className="text-sm uppercase tracking-[0.16em] text-black/45">
               Strength Age
             </div>
             <div className="mt-2 text-6xl font-light tracking-[-0.08em]">
@@ -125,7 +155,7 @@ function StrengthAgeCalculator() {
         </div>
 
         <div className="mt-8 rounded-xl bg-black px-5 py-4 text-white">
-          <div className="text-[10px] uppercase tracking-[0.25em] text-white/45">
+          <div className="text-xs uppercase tracking-[0.22em] text-white/45">
             Years Reclaimed
           </div>
           <div className="mt-1 text-4xl font-light tracking-[-0.05em]">
@@ -135,14 +165,14 @@ function StrengthAgeCalculator() {
 
         <div className="mt-4 grid grid-cols-2 gap-3">
           <div className="rounded-xl border border-black/10 p-4">
-            <div className="text-[10px] uppercase tracking-[0.18em] text-black/45">
+            <div className="text-xs uppercase tracking-[0.16em] text-black/45">
               Reserve
             </div>
             <div className="mt-1 text-3xl font-light">{result.reserve}</div>
           </div>
 
           <div className="rounded-xl border border-black/10 p-4">
-            <div className="text-[10px] uppercase tracking-[0.18em] text-black/45">
+            <div className="text-xs uppercase tracking-[0.16em] text-black/45">
               Capacity
             </div>
             <div className="mt-1 text-3xl font-light">{result.capacity}</div>
@@ -207,20 +237,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,0.08),transparent_30%),linear-gradient(135deg,#111_0%,#030303_50%,#000_100%)]" />
         <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-        <header className="relative z-10 flex items-center justify-between">
+        <header className="relative z-10 flex items-start justify-between">
           <div>
-  <div
-    className={`${michroma.className} text-[24px] uppercase tracking-[0.26em] md:text-[30px] lg:text-[36px]`}
-  >
-    WAREHOUSE GYM
-  </div>
+            <div
+              className={`${michroma.className} text-[25px] uppercase tracking-[0.2em] md:text-[32px] lg:text-[38px]`}
+            >
+              WAREHOUSE GYM
+            </div>
 
-  <div className="mt-3 text-[10px] uppercase tracking-[0.48em] text-white/42">
-    Strength. Performance. Longevity.
-  </div>
-</div>
+            <div className="mt-3 text-[12px] uppercase tracking-[0.38em] text-white/46">
+              Strength. Performance. Longevity.
+            </div>
+          </div>
 
-          <nav className="hidden gap-10 text-[13px] uppercase tracking-[0.2em] text-white/55 lg:flex">
+          <nav className="hidden gap-10 text-[13px] uppercase tracking-[0.2em] text-white/58 lg:flex">
             <a href="#training">Training</a>
             <a href="#calculator">Strength Age</a>
             <a href="#technology">Technology</a>
@@ -229,7 +259,7 @@ export default function Home() {
 
           <a
             href="#calculator"
-            className="rounded-full border border-white/25 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
+            className="rounded-full border border-white/25 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
           >
             Book Test
           </a>
@@ -237,7 +267,7 @@ export default function Home() {
 
         <div className="relative z-10 flex min-h-[82vh] items-center pt-10">
           <div className="w-full max-w-6xl">
-            <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/35">
+            <div className="mb-6 text-[13px] font-semibold uppercase tracking-[0.26em] text-white/50">
               Taiwan Strength & Longevity Lab
             </div>
 
@@ -263,21 +293,18 @@ export default function Home() {
               STAY YOUNG.
             </h2>
 
-            <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
-  Your body is aging. Your strength does not have to.
-  <br />
-  Warehouse Gym measures strength, performance and longevity as one unified system.
-  <br />
-  <span className="mt-3 block text-white/45">
- Warehouse Gym 不只是健身房。
-我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
-年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。
-透過肌力、爆發力、體能與恢復數據，我們幫助你建立一副能支撐未來的身體。
+            <p className="mt-9 max-w-3xl text-lg leading-relaxed text-white/64 md:text-xl">
+              Your body is aging. Your strength does not have to.
+              <br />
+              Warehouse Gym measures strength, performance and longevity as one unified system.
+              <br />
+              <span className="mt-4 block text-white/52">
+                Warehouse Gym 不只是健身房。我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
+                年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。透過肌力、爆發力、體能與恢復數據，我們幫助你建立一副能支撐未來的身體。
+              </span>
+            </p>
 
-  </span>
-</p>
-
-            <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
+            <div className="mt-11 grid max-w-5xl gap-5 md:grid-cols-3">
               {[
                 {
                   title: "Data Driven",
@@ -289,15 +316,15 @@ export default function Home() {
                 },
                 {
                   title: "Longevity Focus",
-                  desc: "從力量，肌肉量與最大攝氧量建立長期健康資本。",
+                  desc: "從力量、肌肉量與最大攝氧量建立長期健康資本。",
                 },
               ].map((card) => (
                 <div
                   key={card.title}
-                  className="min-h-[92px] rounded-2xl border border-white/14 bg-white/[0.025] p-6"
+                  className="min-h-[110px] rounded-2xl border border-white/14 bg-white/[0.025] p-6"
                 >
-                  <div className="text-base font-semibold">{card.title}</div>
-                  <p className="mt-3 text-sm leading-relaxed text-white/50">
+                  <div className="text-lg font-semibold">{card.title}</div>
+                  <p className="mt-3 text-base leading-relaxed text-white/58">
                     {card.desc}
                   </p>
                 </div>
@@ -314,9 +341,7 @@ export default function Home() {
       >
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Strength By Design
-            </div>
+            <div className="section-eyebrow">Strength By Design</div>
 
             <h2 className="section-heading">
               Measure.
@@ -326,7 +351,7 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="max-w-md text-sm leading-relaxed text-white/48">
+            <p className="section-copy max-w-xl">
               Every program starts with assessment. We track the metrics that
               matter and build training that evolves with you.
               <br />
@@ -337,14 +362,12 @@ export default function Home() {
               {method.map((item) => (
                 <div key={item.title}>
                   <div className="mb-5 flex items-center gap-4">
-                    <div className="text-[10px] text-white/35">
-                      {item.num}
-                    </div>
+                    <div className="text-xs text-white/45">{item.num}</div>
                     <div className="h-px flex-1 bg-white/35" />
                   </div>
 
-                  <div className="text-lg font-semibold">{item.title}</div>
-                  <p className="mt-3 text-xs leading-relaxed text-white/45">
+                  <div className="text-2xl font-semibold">{item.title}</div>
+                  <p className="mt-4 text-base leading-relaxed text-white/58">
                     {item.desc}
                   </p>
                 </div>
@@ -358,9 +381,7 @@ export default function Home() {
       <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Built For Serious Training
-            </div>
+            <div className="section-eyebrow">Built For Serious Training</div>
 
             <h2 className="section-heading">
               Space To
@@ -369,50 +390,40 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-md text-sm leading-relaxed text-white/48">
+          <p className="section-copy max-w-xl">
             A purpose-built warehouse with everything serious lifters need to
             perform and recover.
             <br />
-            專為自由重量訓練而設計的空間， 盡情摔槓。
+            專為自由重量訓練而設計的空間，盡情摔槓。
           </p>
         </div>
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-3">
           <div className="facility-card min-h-[360px] md:col-span-1 md:row-span-2">
             <div className="mt-auto">
-              <div className="text-xs font-semibold uppercase">
-                Warehouse Strength Floor
-              </div>
-              <div className="mt-1 text-xs text-white/45">
-                力量訓練區
-              </div>
+              <div className="facility-title">Warehouse Strength Floor</div>
+              <div className="facility-desc">力量訓練區</div>
             </div>
           </div>
 
-          <div className="facility-card min-h-[170px]">
+          <div className="facility-card min-h-[190px]">
             <div className="mt-auto">
-              <div className="text-xs font-semibold uppercase">
-                Recovery Corner
-              </div>
-              <div className="mt-1 text-xs text-white/45">恢復與放鬆區</div>
+              <div className="facility-title">Recovery Corner</div>
+              <div className="facility-desc">恢復與放鬆區</div>
             </div>
           </div>
 
-          <div className="facility-card min-h-[170px]">
+          <div className="facility-card min-h-[190px]">
             <div className="mt-auto">
-              <div className="text-xs font-semibold uppercase">
-                Performance Coaching
-              </div>
-              <div className="mt-1 text-xs text-white/45">表現提升指導</div>
+              <div className="facility-title">Performance Coaching</div>
+              <div className="facility-desc">表現提升指導</div>
             </div>
           </div>
 
-          <div className="facility-card min-h-[170px] md:col-span-2">
+          <div className="facility-card min-h-[190px] md:col-span-2">
             <div className="mt-auto">
-              <div className="text-xs font-semibold uppercase">Community</div>
-              <div className="mt-1 text-xs text-white/45">
-                強者社群 / 共同進步
-              </div>
+              <div className="facility-title">Community</div>
+              <div className="facility-desc">強者社群 / 共同進步</div>
             </div>
           </div>
         </div>
@@ -425,9 +436,7 @@ export default function Home() {
       >
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Signature Product
-            </div>
+            <div className="section-eyebrow">Signature Product</div>
 
             <h2 className="section-heading">
               Strength Age
@@ -435,7 +444,7 @@ export default function Home() {
               Calculator.
             </h2>
 
-            <p className="mt-8 max-w-md text-sm leading-relaxed text-white/50">
+            <p className="section-copy mt-8 max-w-xl">
               Not BMI. Not bodyweight. Not just InBody. Strength Age™ turns
               strength, power, conditioning and recovery into one number people
               understand instantly.
@@ -455,9 +464,7 @@ export default function Home() {
       >
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Membership
-            </div>
+            <div className="section-eyebrow">Membership</div>
 
             <h2 className="section-heading">
               Choose Your
@@ -466,7 +473,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-md text-sm leading-relaxed text-white/48">
+          <p className="section-copy max-w-xl">
             Flexible plans. Clear benefits. Choose what fits your goals.
             <br />
             從基礎自主訓練、無限使用，到個人化教練指導。
@@ -477,31 +484,31 @@ export default function Home() {
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`rounded-xl border p-6 ${
+              className={`rounded-xl border p-7 ${
                 index === 1
                   ? "border-white bg-white text-black"
                   : "border-white/12 bg-white/[0.02] text-white"
               }`}
             >
               {index === 1 && (
-                <div className="mb-5 inline-flex rounded-full bg-black px-4 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-white">
+                <div className="mb-5 inline-flex rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
                   Most Popular
                 </div>
               )}
 
-              <div className="text-2xl font-semibold">{plan.name}</div>
+              <div className="text-3xl font-semibold">{plan.name}</div>
 
               <div
-                className={`mt-1 text-xs ${
-                  index === 1 ? "text-black/55" : "text-white/45"
+                className={`mt-2 text-base ${
+                  index === 1 ? "text-black/55" : "text-white/50"
                 }`}
               >
                 {plan.sub}
               </div>
 
-              <div className="mt-6 space-y-3">
+              <div className="mt-7 space-y-4">
                 {plan.items.map((item) => (
-                  <div key={item} className="flex gap-3 text-sm">
+                  <div key={item} className="flex gap-3 text-base">
                     <span>✓</span>
                     <span>{item}</span>
                   </div>
@@ -510,7 +517,7 @@ export default function Home() {
 
               <button
                 type="button"
-                className={`mt-8 w-full rounded-full border px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] ${
+                className={`mt-9 w-full rounded-full border px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] ${
                   index === 1
                     ? "border-black text-black"
                     : "border-white/20 text-white"
@@ -533,7 +540,7 @@ export default function Home() {
           </h2>
 
           <div>
-            <p className="max-w-md text-sm leading-relaxed text-white/50">
+            <p className="section-copy max-w-xl">
               This is more than a gym. This is where strength is built, and
               legacy begins.
               <br />
@@ -543,14 +550,14 @@ export default function Home() {
             <div className="mt-8 flex gap-4">
               <a
                 href="#membership"
-                className="rounded-full bg-white px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-black"
+                className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-black"
               >
                 Join Now
               </a>
 
               <a
                 href="#calculator"
-                className="rounded-full border border-white/20 px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
+                className="rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white"
               >
                 Book A Tour
               </a>
@@ -563,9 +570,7 @@ export default function Home() {
       <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Training Philosophy
-            </div>
+            <div className="section-eyebrow">Training Philosophy</div>
 
             <h2 className="section-heading">
               Train For
@@ -574,7 +579,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-md text-sm leading-relaxed text-white/48">
+          <p className="section-copy max-w-xl">
             We train attributes that protect your body, enhance performance and
             extend your edge.
             <br />
@@ -586,11 +591,11 @@ export default function Home() {
           {training.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-white/12 bg-white/[0.02] p-6"
+              className="rounded-xl border border-white/12 bg-white/[0.02] p-7"
             >
               <div className="mb-10 h-12 w-12 rounded-full border border-white/20" />
-              <div className="text-lg font-semibold">{item.title}</div>
-              <p className="mt-3 text-xs leading-relaxed text-white/45">
+              <div className="text-2xl font-semibold">{item.title}</div>
+              <p className="mt-4 text-base leading-relaxed text-white/58">
                 {item.desc}
               </p>
             </div>
@@ -605,9 +610,7 @@ export default function Home() {
       >
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/35">
-              Technology Advantage
-            </div>
+            <div className="section-eyebrow">Technology Advantage</div>
 
             <h2 className="section-heading">
               Data Meets
@@ -616,7 +619,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-md text-sm leading-relaxed text-white/48">
+          <p className="section-copy max-w-xl">
             We combine advanced testing with intelligent insights to help you
             train smarter and get stronger.
             <br />
@@ -626,17 +629,17 @@ export default function Home() {
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-xl border border-white/12 bg-white/[0.02] p-7">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
               Hawkin Dynamics
             </div>
 
-            <div className="mt-4 text-3xl font-semibold leading-none">
+            <div className="mt-5 text-4xl font-semibold leading-none">
               Force Plate
               <br />
               Intelligence
             </div>
 
-            <p className="mt-5 max-w-md text-xs leading-relaxed text-white/45">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/58">
               捕捉力量峰值、RFD、跳躍表現與左右不對稱，讓訓練不再靠感覺。
             </p>
 
@@ -644,7 +647,7 @@ export default function Home() {
               {["Peak Force", "RFD", "Asymmetry", "Stability"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-lg border border-white/10 px-4 py-3 text-[10px] uppercase tracking-[0.14em] text-white/55"
+                  className="rounded-lg border border-white/10 px-4 py-3 text-xs uppercase tracking-[0.14em] text-white/62"
                 >
                   {item}
                 </div>
@@ -654,29 +657,29 @@ export default function Home() {
 
           <div className="grid gap-5">
             <div className="rounded-xl border border-white/12 bg-white/[0.02] p-7">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
+              <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
                 VO₂ Max
               </div>
 
-              <div className="mt-4 text-3xl font-semibold leading-none">
+              <div className="mt-5 text-4xl font-semibold leading-none">
                 Engine Capacity.
               </div>
 
-              <p className="mt-5 text-xs leading-relaxed text-white/45">
-                評估心肺與代謝能力，最大攝氧量vo2Max。
+              <p className="mt-6 text-base leading-relaxed text-white/58">
+                評估心肺與代謝能力，最大攝氧量 VO₂max。
               </p>
             </div>
 
             <div className="rounded-xl border border-white/12 bg-white/[0.02] p-7">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
+              <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
                 Speed
               </div>
 
-              <div className="mt-4 text-3xl font-semibold leading-none">
+              <div className="mt-5 text-4xl font-semibold leading-none">
                 Build Speed.
               </div>
 
-              <p className="mt-5 text-xs leading-relaxed text-white/45">
+              <p className="mt-6 text-base leading-relaxed text-white/58">
                 透過速度與爆發力訓練，讓力量轉化為表現。
               </p>
             </div>
@@ -685,17 +688,17 @@ export default function Home() {
       </section>
 
       <footer className="px-6 py-10 md:px-14 lg:px-20">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-[10px] uppercase tracking-[0.28em] text-white/35 md:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 text-xs uppercase tracking-[0.22em] text-white/45 md:flex-row">
           <div>
-       <div
-  className={`${michroma.className} text-[18px] uppercase tracking-[0.22em] text-white md:text-[22px]`}
->
-  WAREHOUSE GYM
-</div>
+            <div
+              className={`${michroma.className} text-lg uppercase tracking-[0.2em] text-white md:text-xl`}
+            >
+              WAREHOUSE GYM
+            </div>
 
-<div className="mt-2 text-[9px] uppercase tracking-[0.36em] text-white/35">
-  Strength. Performance. Longevity.
-</div>
+            <div className="mt-2 text-[10px] uppercase tracking-[0.32em] text-white/35">
+              Strength. Performance. Longevity.
+            </div>
           </div>
 
           <div className="flex gap-8">
@@ -712,8 +715,24 @@ export default function Home() {
           background: #000;
         }
 
+        .section-eyebrow {
+          margin-bottom: 1.25rem;
+          font-size: 13px;
+          line-height: 1.2;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .section-copy {
+          font-size: 18px;
+          line-height: 1.75;
+          color: rgba(255, 255, 255, 0.58);
+        }
+
         .section-heading {
-          font-size: clamp(3rem, 6vw, 5.8rem);
+          font-size: clamp(3.4rem, 6vw, 6rem);
           line-height: 0.9;
           letter-spacing: -0.07em;
           font-weight: 800;
@@ -722,13 +741,28 @@ export default function Home() {
 
         .facility-card {
           display: flex;
-          padding: 1.5rem;
+          padding: 1.75rem;
           border: 1px solid rgba(255,255,255,0.12);
           border-radius: 1rem;
           background:
             linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.015)),
             radial-gradient(circle at 70% 20%, rgba(255,255,255,0.11), transparent 30%);
           overflow: hidden;
+        }
+
+        .facility-title {
+          font-size: 16px;
+          line-height: 1.2;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.92);
+        }
+
+        .facility-desc {
+          margin-top: 0.55rem;
+          font-size: 15px;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.58);
         }
 
         .calculator-slider {
