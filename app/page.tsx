@@ -771,34 +771,39 @@ export default function Home() {
           <div className="mt-16 border-t border-white/10 pt-8">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-5">
-                <div className="h-10 w-[60px] shrink-0 overflow-hidden rounded-[2px] border border-white/30 shadow-[0_0_24px_rgba(255,255,255,0.12)]">
+                <div className="h-[50px] w-[75px] shrink-0 overflow-hidden rounded-[2px] border border-white/35 bg-white shadow-[0_0_28px_rgba(255,255,255,0.14)]">
                   <svg
-                    viewBox="0 0 1200 800"
-                    className="h-full w-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Flag of the Republic of China"
-                  >
-                    <rect width="1200" height="800" fill="#FE0000" />
-                    <rect width="600" height="400" fill="#000095" />
+  viewBox="0 0 900 600"
+  className="h-full w-full"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="中華民國國旗"
+  role="img"
+  shapeRendering="geometricPrecision"
+>
+  <rect width="900" height="600" fill="#FE0000" />
+  <rect x="0" y="0" width="450" height="300" fill="#000095" />
 
-                    <g transform="translate(300 200)">
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(0)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(30)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(60)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(90)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(120)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(150)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(180)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(210)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(240)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(270)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(300)" />
-                      <polygon points="0,-140 30,-52 -30,-52" fill="#FFFFFF" transform="rotate(330)" />
+  <g transform="translate(225 150)">
+    <g fill="#FFFFFF">
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(0)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(30)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(60)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(90)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(120)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(150)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(180)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(210)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(240)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(270)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(300)" />
+      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(330)" />
 
-                      <circle r="86" fill="#FFFFFF" />
-                      <circle r="46" fill="#000095" />
-                    </g>
-                  </svg>
+      <circle r="58" />
+    </g>
+
+    <circle r="34" fill="#000095" />
+  </g>
+</svg>
                 </div>
 
                 <div>
