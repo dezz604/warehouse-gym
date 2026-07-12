@@ -291,13 +291,13 @@ export default function Home() {
   }}
 >
   <span className="block text-white tracking-normal">
-    <span className="inline-block ml-[-0.16em]">L</span>
+    <span className="inline-block ml-[-0.10em]">L</span>
     <span className="inline-block ml-[0.10em]">I</span>
     <span className="inline-block ml-[-0.14em]">F</span>
     <span className="inline-block ml-[0.06em]">T</span>
   </span>
 
-  <span className="block text-white tracking-[-0.075em]">
+  <span className="block text-white tracking-[-0.075em] ml-[-0.10em]">
     HEAVY.
   </span>
 </h1>
