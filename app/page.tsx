@@ -2,6 +2,24 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+type Plan = {
+  name: string;
+  sub: string;
+  items: string[];
+  cta: string;
+};
+
+type SimpleCard = {
+  title: string;
+  desc: string;
+};
+
+type MethodItem = {
+  num: string;
+  title: string;
+  desc: string;
+};
+
 function RollingStrengthAge() {
   const steps = [62, 58, 51, 44, 34];
   const [index, setIndex] = useState(0);
@@ -14,19 +32,55 @@ function RollingStrengthAge() {
     }, 650);
 
     return () => clearTimeout(timer);
-  }, [index, steps.length]);
+  }, [index]);
 
   return (
     <div>
-      <div className="text-xs tracking-[0.22em] text-white/35 uppercase">
+      <div className="text-xs uppercase tracking-[0.22em] text-white/35">
         Strength Age
       </div>
+
       <div className="mt-2 text-7xl font-light tracking-[-0.06em] md:text-8xl">
         {steps[index]}
       </div>
-      <div className="mt-3 text-[10px] font-semibold tracking-[0.28em] text-white/30 uppercase">
+
+      <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/30">
         {index === steps.length - 1 ? "Strength Age™" : "Calculating"}
       </div>
+    </div>
+  );
+}
+
+function SliderRow({
+  label,
+  value,
+  min,
+  max,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  onChange: (value: number) => void;
+}) {
+  return (
+    <div>
+      <div className="mb-2 flex items-center justify-between">
+        <div className="text-xs uppercase tracking-[0.18em] text-white/45">
+          {label}
+        </div>
+        <div className="font-mono text-sm text-white/80">{value}</div>
+      </div>
+
+      <input
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="calculator-slider w-full"
+      />
     </div>
   );
 }
@@ -44,23 +98,15 @@ function StrengthAgeCalculator() {
 
     const ageReduction = Math.round(((average - 60) / 40) * 28);
     const strengthAge = Math.max(25, Math.min(90, age - ageReduction));
-    const reserve = Math.round(average);
+    const delta = Math.max(0, age - strengthAge);
 
     return {
       strengthAge,
-      reserve,
-      average: Math.round(average),
-      delta: age - strengthAge,
+      reserve: Math.round(average),
+      capacity: Math.round(average),
+      delta,
     };
   }, [age, strength, power, conditioning, recovery]);
-
-  const sliders = [
-    ["Chronological Age", age, setAge, 18, 85],
-    ["Strength Score", strength, setStrength, 30, 100],
-    ["Power Score", power, setPower, 30, 100],
-    ["Conditioning Score", conditioning, setConditioning, 30, 100],
-    ["Recovery Score", recovery, setRecovery, 30, 100],
-  ] as const;
 
   return (
     <div className="grid gap-5 lg:grid-cols-[1fr_0.85fr]">
@@ -70,29 +116,49 @@ function StrengthAgeCalculator() {
         </div>
 
         <div className="space-y-5">
-          {sliders.map(([label, value, setter, min, max]) => (
-            <div key={label}>
-              <div className="mb-2 flex items-center justify-between">
-                <div className="text-xs uppercase tracking-[0.18em] text-white/45">
-                  {label}
-                </div>
-                <div className="font-mono text-sm text-white/80">{value}</div>
-              </div>
+          <SliderRow
+            label="Chronological Age"
+            value={age}
+            min={18}
+            max={85}
+            onChange={setAge}
+          />
 
-              <input
-                type="range"
-                min={min}
-                max={max}
-                value={value}
-                onChange={(e) => setter(Number(e.target.value))}
-                className="calculator-slider w-full"
-              />
-            </div>
-          ))}
+          <SliderRow
+            label="Strength Score"
+            value={strength}
+            min={30}
+            max={100}
+            onChange={setStrength}
+          />
+
+          <SliderRow
+            label="Power Score"
+            value={power}
+            min={30}
+            max={100}
+            onChange={setPower}
+          />
+
+          <SliderRow
+            label="Conditioning Score"
+            value={conditioning}
+            min={30}
+            max={100}
+            onChange={setConditioning}
+          />
+
+          <SliderRow
+            label="Recovery Score"
+            value={recovery}
+            min={30}
+            max={100}
+            onChange={setRecovery}
+          />
         </div>
       </div>
 
-      <div className="rounded-[1.4rem] border border-white/10 bg-white text-black p-6">
+      <div className="rounded-[1.4rem] border border-white/10 bg-white p-6 text-black">
         <div className="text-[10px] font-black uppercase tracking-[0.3em] text-black/45">
           Result Preview
         </div>
@@ -122,7 +188,7 @@ function StrengthAgeCalculator() {
             Years Reclaimed
           </div>
           <div className="mt-1 text-4xl font-light tracking-[-0.05em]">
-            {result.delta > 0 ? result.delta : 0}
+            {result.delta}
           </div>
         </div>
 
@@ -138,7 +204,7 @@ function StrengthAgeCalculator() {
             <div className="text-[10px] uppercase tracking-[0.18em] text-black/45">
               Capacity
             </div>
-            <div className="mt-1 text-3xl font-light">{result.average}</div>
+            <div className="mt-1 text-3xl font-light">{result.capacity}</div>
           </div>
         </div>
       </div>
@@ -147,23 +213,62 @@ function StrengthAgeCalculator() {
 }
 
 export default function Home() {
-  const method = [
-    ["01", "Force Plate", "測量垂直力、爆發力、RFD、左右不對稱。"],
-    ["02", "Grip Strength", "反映全身力量儲備與神經肌肉狀態。"],
-    ["03", "Conditioning", "提升心肺、恢復、代謝與長期承受能力。"],
+  const method: MethodItem[] = [
+    {
+      num: "01",
+      title: "Force Plate",
+      desc: "測量垂直力、爆發力、RFD、左右不對稱。",
+    },
+    {
+      num: "02",
+      title: "Grip Strength",
+      desc: "反映全身力量儲備與神經肌肉狀態。",
+    },
+    {
+      num: "03",
+      title: "Conditioning",
+      desc: "提升心肺、恢復、代謝與長期承受能力。",
+    },
   ];
 
-  const training = [
-    ["Strength", "打造更強的力量基礎。"],
-    ["Performance", "更快、更強、更有效。"],
-    ["Longevity", "延長健康壽命，享受更好的生活。"],
-    ["AI Assessment", "AI 追蹤評估，讓進步更具體。"],
+  const training: SimpleCard[] = [
+    {
+      title: "Strength",
+      desc: "打造更強的力量基礎。",
+    },
+    {
+      title: "Performance",
+      desc: "更快、更強、更有效。",
+    },
+    {
+      title: "Longevity",
+      desc: "延長健康壽命，享受更好的生活。",
+    },
+    {
+      title: "AI Assessment",
+      desc: "AI 追蹤評估，讓進步更具體。",
+    },
   ];
 
-  const plans = [
-    ["Essential", "Independent training", ["基礎力量評估", "彈性自主訓練", "月度訓練記錄", "基礎設施使用"], "SELECT PLAN"],
-    ["Unlimited", "Full access", ["無限次訓練", "高級評估", "恢復追蹤", "團體課程", "優先預約"], "START 7-DAY TRIAL"],
-    ["Coached", "Structured progression", ["一對一教練指導", "個性化訓練計劃", "周期化訓練", "專業評估追蹤"], "APPLY NOW"],
+  const plans: Plan[] = [
+    {
+      name: "Essential",
+      sub: "Independent training",
+      items: ["基礎力量評估", "彈性自主訓練", "月度訓練記錄", "基礎設施使用"],
+      cta: "SELECT PLAN",
+    },
+    {
+      name: "Unlimited",
+      sub: "Full access",
+      items: ["無限次訓練", "高級評估", "恢復追蹤", "團體課程", "優先預約"],
+      cta: "START 7-DAY TRIAL",
+    },
+    {
+      name: "Coached",
+      sub: "Structured progression",
+      items: ["一對一教練指導", "個性化訓練計劃", "周期化訓練", "專業評估追蹤"],
+      cta: "APPLY NOW",
+    },
   ];
 
   return (
@@ -184,6 +289,7 @@ export default function Home() {
             >
               WAREHOUSE GYM
             </div>
+
             <div className="mt-1 text-[9px] uppercase tracking-[0.32em] text-white/38">
               Strength. Performance. Longevity.
             </div>
@@ -238,17 +344,26 @@ export default function Home() {
 
             <div className="mt-10 grid max-w-5xl gap-4 md:grid-cols-3">
               {[
-                ["Data Driven", "科學評估每日身體狀態，讓訓練更具邏輯。"],
-                ["Built For Results", "力量、速度、恢復能力都能被追蹤。"],
-                ["Longevity Focus", "從力量與肌肉量建立長期健康資本。"],
-              ].map(([title, desc]) => (
+                {
+                  title: "Data Driven",
+                  desc: "科學評估每日身體狀態，讓訓練更具邏輯。",
+                },
+                {
+                  title: "Built For Results",
+                  desc: "力量、速度、恢復能力都能被追蹤。",
+                },
+                {
+                  title: "Longevity Focus",
+                  desc: "從力量與肌肉量建立長期健康資本。",
+                },
+              ].map((card) => (
                 <div
-                  key={title}
+                  key={card.title}
                   className="rounded-xl border border-white/12 bg-white/[0.025] p-5"
                 >
-                  <div className="text-sm font-semibold">{title}</div>
+                  <div className="text-sm font-semibold">{card.title}</div>
                   <p className="mt-2 text-xs leading-relaxed text-white/45">
-                    {desc}
+                    {card.desc}
                   </p>
                 </div>
               ))}
@@ -284,16 +399,18 @@ export default function Home() {
             </p>
 
             <div className="mt-12 grid gap-8 md:grid-cols-3">
-              {method.map(([num, title, desc]) => (
-                <div key={title}>
+              {method.map((item) => (
+                <div key={item.title}>
                   <div className="mb-5 flex items-center gap-4">
-                    <div className="text-[10px] text-white/35">{num}</div>
+                    <div className="text-[10px] text-white/35">
+                      {item.num}
+                    </div>
                     <div className="h-px flex-1 bg-white/35" />
                   </div>
 
-                  <div className="text-lg font-semibold">{title}</div>
+                  <div className="text-lg font-semibold">{item.title}</div>
                   <p className="mt-3 text-xs leading-relaxed text-white/45">
-                    {desc}
+                    {item.desc}
                   </p>
                 </div>
               ))}
@@ -331,7 +448,9 @@ export default function Home() {
               <div className="text-xs font-semibold uppercase">
                 Warehouse Strength Floor
               </div>
-              <div className="mt-1 text-xs text-white/45">倉儲式力量訓練區</div>
+              <div className="mt-1 text-xs text-white/45">
+                倉儲式力量訓練區
+              </div>
             </div>
           </div>
 
@@ -356,7 +475,9 @@ export default function Home() {
           <div className="facility-card min-h-[170px] md:col-span-2">
             <div className="mt-auto">
               <div className="text-xs font-semibold uppercase">Community</div>
-              <div className="mt-1 text-xs text-white/45">強者社群 / 共同進步</div>
+              <div className="mt-1 text-xs text-white/45">
+                強者社群 / 共同進步
+              </div>
             </div>
           </div>
         </div>
@@ -388,9 +509,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div>
-            <StrengthAgeCalculator />
-          </div>
+          <StrengthAgeCalculator />
         </div>
       </section>
 
@@ -420,9 +539,9 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 md:grid-cols-3">
-          {plans.map(([name, sub, items, cta], index) => (
+          {plans.map((plan, index) => (
             <div
-              key={name}
+              key={plan.name}
               className={`rounded-xl border p-6 ${
                 index === 1
                   ? "border-white bg-white text-black"
@@ -435,17 +554,18 @@ export default function Home() {
                 </div>
               )}
 
-              <div className="text-2xl font-semibold">{name}</div>
+              <div className="text-2xl font-semibold">{plan.name}</div>
+
               <div
                 className={`mt-1 text-xs ${
                   index === 1 ? "text-black/55" : "text-white/45"
                 }`}
               >
-                {sub}
+                {plan.sub}
               </div>
 
               <div className="mt-6 space-y-3">
-                {(items as string[]).map((item) => (
+                {plan.items.map((item) => (
                   <div key={item} className="flex gap-3 text-sm">
                     <span>✓</span>
                     <span>{item}</span>
@@ -454,13 +574,14 @@ export default function Home() {
               </div>
 
               <button
+                type="button"
                 className={`mt-8 w-full rounded-full border px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] ${
                   index === 1
                     ? "border-black text-black"
                     : "border-white/20 text-white"
                 }`}
               >
-                {cta}
+                {plan.cta}
               </button>
             </div>
           ))}
@@ -491,6 +612,7 @@ export default function Home() {
               >
                 Join Now
               </a>
+
               <a
                 href="#calculator"
                 className="rounded-full border border-white/20 px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white"
@@ -526,15 +648,15 @@ export default function Home() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 md:grid-cols-4">
-          {training.map(([title, desc]) => (
+          {training.map((item) => (
             <div
-              key={title}
+              key={item.title}
               className="rounded-xl border border-white/12 bg-white/[0.02] p-6"
             >
               <div className="mb-10 h-12 w-12 rounded-full border border-white/20" />
-              <div className="text-lg font-semibold">{title}</div>
+              <div className="text-lg font-semibold">{item.title}</div>
               <p className="mt-3 text-xs leading-relaxed text-white/45">
-                {desc}
+                {item.desc}
               </p>
             </div>
           ))}
@@ -572,11 +694,13 @@ export default function Home() {
             <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
               Hawkin Dynamics
             </div>
+
             <div className="mt-4 text-3xl font-semibold leading-none">
               Force Plate
               <br />
               Intelligence
             </div>
+
             <p className="mt-5 max-w-md text-xs leading-relaxed text-white/45">
               捕捉峰值力量、RFD、跳躍表現與左右不對稱，讓訓練不再靠感覺。
             </p>
@@ -598,9 +722,11 @@ export default function Home() {
               <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
                 VO₂ Max
               </div>
+
               <div className="mt-4 text-3xl font-semibold leading-none">
                 Engine Capacity.
               </div>
+
               <p className="mt-5 text-xs leading-relaxed text-white/45">
                 評估心肺與代謝能力，提升耐力與恢復力。
               </p>
@@ -610,9 +736,11 @@ export default function Home() {
               <div className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/35">
                 Speed
               </div>
+
               <div className="mt-4 text-3xl font-semibold leading-none">
                 Build Speed.
               </div>
+
               <p className="mt-5 text-xs leading-relaxed text-white/45">
                 透過速度與爆發力訓練，讓力量轉化為表現。
               </p>
