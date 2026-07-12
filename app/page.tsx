@@ -729,22 +729,24 @@ export default function Home() {
       </section>
 
 <footer className="border-t border-white/10 px-6 py-16 md:px-14 lg:px-20">
-  <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.95fr_1.25fr_0.8fr] lg:items-center">
+  <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.25fr_0.9fr] lg:items-start">
     {/* LEFT LOGO */}
     <div>
       <div
-        className={`${michroma.className} text-[22px] uppercase tracking-[0.2em] text-white md:text-[26px] lg:text-[30px]`}
+        className={`${michroma.className} max-w-[360px] text-[26px] uppercase leading-[1.35] tracking-[0.22em] text-white md:text-[32px] lg:text-[38px]`}
       >
-        WAREHOUSE GYM
+        WAREHOUSE
+        <br />
+        GYM
       </div>
 
-      <div className="mt-3 text-[10px] uppercase tracking-[0.34em] text-white/38">
+      <div className="mt-5 text-[10px] uppercase tracking-[0.34em] text-white/38">
         Strength. Performance. Longevity.
       </div>
     </div>
 
     {/* CENTER ADDRESS */}
-    <div className="border-l border-white/15 pl-8">
+    <div className="border-l border-white/15 pl-10">
       <div className="flex items-start gap-5">
         {/* Taiwan Flag */}
         <div className="mt-1 h-7 w-10 shrink-0 overflow-hidden rounded-sm border border-white/20 shadow-sm">
@@ -763,11 +765,11 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="text-[11px] uppercase tracking-[0.3em] text-white/35">
+          <div className="text-[11px] uppercase tracking-[0.32em] text-white/35">
             Republic of China
           </div>
 
-          <div className="mt-2 text-base leading-relaxed tracking-[0.08em] text-white/72">
+          <div className="mt-3 text-base leading-relaxed tracking-[0.08em] text-white/72">
             中華民國・台灣・桃園市楊梅區秀才路 162 號
           </div>
         </div>
@@ -775,7 +777,7 @@ export default function Home() {
     </div>
 
     {/* RIGHT NAV */}
-    <nav className="grid grid-cols-2 gap-x-10 gap-y-5 text-[12px] uppercase tracking-[0.22em] text-white/52 lg:justify-self-end">
+    <nav className="grid grid-cols-2 gap-x-14 gap-y-6 text-[12px] uppercase tracking-[0.24em] text-white/52 lg:justify-self-end">
       <a href="#training" className="transition hover:text-white">
         Training
       </a>
