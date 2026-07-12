@@ -233,9 +233,23 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
       {/* HERO */}
-      <section className="relative min-h-screen border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,0.08),transparent_30%),linear-gradient(135deg,#111_0%,#030303_50%,#000_100%)]" />
-        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
+  {/* Base black gradient */}
+  <div className="absolute inset-0 bg-[linear-gradient(135deg,#151515_0%,#050505_45%,#000_100%)]" />
+
+  {/* Premium soft glow */}
+  <div className="absolute left-[-18%] top-[8%] h-[720px] w-[720px] rounded-full bg-white/[0.075] blur-[120px]" />
+  <div className="absolute right-[-20%] top-[20%] h-[620px] w-[620px] rounded-full bg-white/[0.045] blur-[140px]" />
+  <div className="absolute bottom-[-22%] left-[22%] h-[520px] w-[520px] rounded-full bg-white/[0.035] blur-[120px]" />
+
+  {/* Diagonal industrial light sweep */}
+  <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.035)_18%,transparent_42%)]" />
+
+  {/* Subtle grid texture */}
+  <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] bg-[size:64px_64px]" />
+
+  {/* Dark vignette */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,.42)_55%,rgba(0,0,0,.9)_100%)]" />
 
         <header className="relative z-10 flex items-start justify-between">
           <div>
@@ -266,6 +280,7 @@ export default function Home() {
         </header>
 
         <div className="relative z-10 flex min-h-[82vh] items-center pt-36 md:pt-40 lg:pt-44">
+          <div className="pointer-events-none absolute left-[6%] top-[22%] h-[420px] w-[620px] rounded-full bg-white/[0.045] blur-[100px]" />
           <div className="w-full max-w-6xl">
             <div className="mb-6 text-[13px] font-semibold uppercase tracking-[0.26em] text-white/50">
               Taiwan Strength & Longevity Lab
