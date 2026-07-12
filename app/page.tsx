@@ -286,16 +286,18 @@ export default function Home() {
               Taiwan Strength & Longevity Lab
             </div>
 
-            <h1
-              className="max-w-[980px] text-[16vw] font-normal uppercase leading-[0.86] tracking-[-0.035em] md:text-[10.5vw] lg:text-[6.9vw]"
-              style={{
-                fontFamily:
-                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-              }}
-            >
-              <span className="block text-white">LIFT</span>
-              <span className="block text-white">HEAVY.</span>
-            </h1>
+  <h1
+  className="max-w-[820px] text-[15.2vw] font-normal uppercase leading-[0.76] tracking-[-0.075em] md:text-[9.8vw] lg:text-[6.25vw]"
+  style={{
+    fontFamily:
+      "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+    transform: "scaleX(0.92)",
+    transformOrigin: "left center",
+  }}
+>
+  <span className="block text-white">LIFT</span>
+  <span className="block text-white">HEAVY.</span>
+</h1>
 
 <h2
   className={`${michroma.className} mt-6 max-w-[980px] text-[9vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[6.2vw] lg:text-[4.1vw]`}
