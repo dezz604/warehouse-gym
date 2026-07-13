@@ -776,22 +776,29 @@ export default function Home() {
           <div className="mt-16 border-t border-white/10 pt-8">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-5">
-           <div className="h-[50px] w-[75px] shrink-0 overflow-hidden rounded-[2px] shadow-[0_0_28px_rgba(255,255,255,0.14)]">
+    <div className="h-[50px] w-[75px] shrink-0 overflow-hidden rounded-[2px] shadow-[0_0_28px_rgba(255,255,255,0.14)]">
                   <svg
-                    viewBox="0 0 36 24"
+                    viewBox="0 0 900 600"
                     className="h-full w-full"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-label="中華民國國旗"
                   >
-                    <rect width="36" height="24" fill="#FE0000" />
-                    <rect width="18" height="12" fill="#000095" />
-                    <g transform="translate(9,6)">
-                      <polygon
-                        fill="#FFFFFF"
-                        points="0,-6 1.173,-2.28 4.966,-3.414 2.766,-0.334 5.753,1.385 2.221,2.023 3.513,5.438 0.407,3.585 -2.316,5.772 -2.138,2.235 -5.589,3.125 -3.275,0.612 -6.046,-1.144 -2.668,-1.727 -4.103,-5.068 -0.925,-3.45"
-                      />
-                      <circle r="3.2" fill="#000095" />
-                      <circle r="2.8" fill="#FFFFFF" />
+                    <rect width="900" height="600" fill="#FE0000" />
+                    <rect width="450" height="300" fill="#000095" />
+                    
+                    {/* 完美比例的白日與 12 道光芒 */}
+                    <g transform="translate(225, 150)">
+                      {Array.from({ length: 12 }).map((_, i) => (
+                        <polygon
+                          key={i}
+                          points="0,-112.5 14.56,-54.33 -14.56,-54.33"
+                          transform={`rotate(${i * 30})`}
+                          fill="#FFFFFF"
+                        />
+                      ))}
+                      {/* 藍色間隙與白色圓心 */}
+                      <circle r="75" fill="#000095" />
+                      <circle r="70" fill="#FFFFFF" />
                     </g>
                   </svg>
                 </div>
