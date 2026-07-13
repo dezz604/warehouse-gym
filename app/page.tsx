@@ -254,30 +254,29 @@ export default function Home() {
 {/* HERO */}
 <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
   {/* BASE */}
-  <div className="absolute inset-0 bg-[#020202]" />
+<div className="absolute inset-0 bg-[#020202]" />
 
-  {/* RIGHT SIDE VISIBLE WHITE GRADIENT PANEL */}
-  <div className="absolute right-0 top-0 h-full w-[62%] bg-[radial-gradient(circle_at_45%_38%,rgba(255,255,255,0.30)_0%,rgba(255,255,255,0.17)_24%,rgba(255,255,255,0.07)_48%,rgba(0,0,0,0.04)_72%,transparent_100%)]" />
+ {/* RIGHT SIDE WHITE GRADIENT PANEL */}
+<div className="absolute right-0 top-0 h-full w-[64%] bg-[radial-gradient(circle_at_62%_42%,rgba(255,255,255,0.34)_0%,rgba(255,255,255,0.19)_24%,rgba(255,255,255,0.08)_48%,transparent_72%)]" />
 
-  {/* LARGE RIGHT SOFT GLOW */}
-  <div className="absolute right-[-6%] top-[2%] h-[920px] w-[920px] rounded-full bg-white/[0.18] blur-[150px]" />
-  <div className="absolute right-[14%] top-[32%] h-[520px] w-[680px] rounded-full bg-white/[0.12] blur-[120px]" />
+{/* LARGE RIGHT SOFT GLOW */}
+<div className="absolute right-[-18%] top-[4%] h-[980px] w-[980px] rounded-full bg-white/[0.22] blur-[155px]" />
+<div className="absolute right-[-4%] top-[30%] h-[600px] w-[760px] rounded-full bg-white/[0.13] blur-[125px]" />
 
-  {/* LEFT INDUSTRIAL WASH */}
-  <div className="absolute left-[-18%] top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.055)_42%,transparent_100%)]" />
+{/* LEFT SIDE DARKNESS */}
+<div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.30)_44%,transparent_100%)]" />
 
-  {/* CENTER DEPTH */}
-  <div className="absolute left-[26%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.055] blur-[140px]" />
+{/* CENTER DEPTH */}
+<div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.055] blur-[140px]" />
 
-  {/* DIAGONAL PREMIUM LIGHT */}
-  <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.13)_0%,rgba(255,255,255,0.055)_22%,transparent_54%)]" />
+{/* DIAGONAL PREMIUM LIGHT */}
+<div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.035)_22%,transparent_54%)]" />
 
-  {/* GRID TEXTURE */}
-  <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px)] bg-[size:64px_64px]" />
+{/* GRID TEXTURE */}
+<div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-  {/* EDGE DARKEN ONLY */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_58%_38%,transparent_0%,rgba(0,0,0,0.10)_44%,rgba(0,0,0,0.62)_100%)]" />
-
+{/* EDGE DARKEN ONLY */}
+<div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.06)_40%,rgba(0,0,0,0.52)_100%)]" />
   <header className="relative z-10 flex items-center justify-between">
     <div>
       <div
