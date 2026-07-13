@@ -254,56 +254,58 @@ export default function Home() {
 {/* HERO */}
 <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
   {/* BASE */}
-<div className="absolute inset-0 bg-[#020202]" />
+  <div className="absolute inset-0 bg-[#020202]" />
 
-{/* MOBILE LEFT LOWER GLOW + DESKTOP LEFT GLOW */}
-<div className="absolute left-[-28%] top-[34%] h-[620px] w-[620px] rounded-full bg-white/[0.14] blur-[120px] md:left-[-18%] md:top-[4%] md:h-[980px] md:w-[980px] md:bg-white/[0.14] md:blur-[155px]" />
+  {/* RIGHT SIDE WHITE GLOW */}
+  <div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.20] blur-[180px]" />
+  <div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.13] blur-[150px]" />
+  <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.07] blur-[130px]" />
 
-<div className="absolute left-[-8%] top-[48%] h-[420px] w-[520px] rounded-full bg-white/[0.08] blur-[105px] md:left-[4%] md:top-[30%] md:h-[600px] md:w-[760px] md:bg-white/[0.08] md:blur-[125px]" />
+  {/* CENTER TRANSITION */}
+  <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.045] blur-[140px]" />
 
-{/* LEFT GRADIENT PANEL */}
-<div className="absolute left-0 top-0 h-full w-[76%] bg-[radial-gradient(circle_at_24%_48%,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.10)_28%,rgba(255,255,255,0.045)_52%,transparent_100%)] md:w-[64%] md:bg-[radial-gradient(circle_at_28%_42%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.12)_24%,rgba(255,255,255,0.055)_48%,rgba(0,0,0,0.05)_72%,transparent_100%)]" />
+  {/* LEFT SIDE DARKNESS */}
+  <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
 
-{/* RIGHT SIDE DARKNESS */}
-<div className="absolute right-0 top-0 h-full w-[48%] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.40)_38%,rgba(0,0,0,0.86)_100%)] md:w-[58%] md:bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.28)_38%,rgba(0,0,0,0.78)_100%)]" />
+  {/* DIAGONAL PREMIUM LIGHT */}
+  <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.025)_26%,transparent_55%)]" />
 
-{/* CENTER DEPTH */}
-<div className="absolute left-[10%] top-[28%] h-[480px] w-[520px] rounded-full bg-white/[0.035] blur-[120px] md:left-[18%] md:top-[18%] md:h-[620px] md:w-[760px] md:bg-white/[0.04] md:blur-[140px]" />
-<div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px)] bg-[size:64px_64px]" />
+  {/* GRID */}
+  <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.20)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.20)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-{/* EDGE DARKEN ONLY */}
-<div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.06)_40%,rgba(0,0,0,0.52)_100%)]" />
+  {/* SOFT EDGE VIGNETTE */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
+
   <header className="relative z-10 flex items-center justify-between">
     <div>
-<div
-  className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
->
-  WAREHOUSE GYM
-</div>
+      <div
+        className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
+      >
+        WAREHOUSE GYM
+      </div>
 
-<div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
-  Strength. Performance. Longevity.
-</div>
+      <div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
+        Strength. Performance. Longevity.
+      </div>
+    </div>
 
     <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
-      <a href="#training" className="transition hover:text-white">
-        Training
-      </a>
-
       <a href="#calculator" className="transition hover:text-white">
         Strength Age
       </a>
-
+      <a href="#training" className="transition hover:text-white">
+        Training
+      </a>
       <a href="#technology" className="transition hover:text-white">
         Technology
       </a>
-
       <a href="#membership" className="transition hover:text-white">
         Membership
       </a>
     </nav>
   </header>
-<div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
+
+  <div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
     <div className="w-full max-w-6xl">
       <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">
         Taiwan Strength & Longevity Lab
@@ -325,16 +327,14 @@ export default function Home() {
           <span className="inline-block ml-[0.06em]">T</span>
         </span>
 
-        <span className="block text-white tracking-[-0.075em] ml-[-0.10em]">
+        <span className="block ml-[-0.10em] text-white tracking-[-0.075em]">
           HEAVY.
         </span>
       </h1>
 
       <h2
         className={`${michroma.className} mt-8 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
-        style={{
-          WebkitTextStroke: "1.1px rgba(255,255,255,.52)",
-        }}
+        style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
       >
         STAY YOUNG.
       </h2>
@@ -342,10 +342,8 @@ export default function Home() {
       <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
         Your body is aging. Your strength does not have to.
         <br />
-        Warehouse Gym measures strength, performance and longevity as one
-        unified system.
+        Warehouse Gym measures strength, performance and longevity as one unified system.
         <br />
-
         <span className="mt-3 block text-white/48">
           Warehouse Gym 不只是健身房。我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
           年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。
@@ -355,34 +353,23 @@ export default function Home() {
 
       <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
         {[
-          {
-            title: "Data Driven",
-            desc: "科學評估每日身體狀態，讓訓練更具邏輯。",
-          },
-          {
-            title: "Built For Results",
-            desc: "力量、速度、心肺能力都能被追蹤。",
-          },
-          {
-            title: "Longevity Focus",
-            desc: "從力量，肌肉量與最大攝氧量建立長期健康資本。",
-          },
+          { title: "Data Driven", desc: "科學評估每日身體狀態，讓訓練更具邏輯。" },
+          { title: "Built For Results", desc: "力量、速度、心肺能力都能被追蹤。" },
+          { title: "Longevity Focus", desc: "從力量、肌肉量與最大攝氧量建立長期健康資本。" },
         ].map((card) => (
           <div
             key={card.title}
             className="min-h-[92px] rounded-2xl border border-white/14 bg-white/[0.025] p-6 backdrop-blur-sm"
           >
             <div className="text-base font-semibold">{card.title}</div>
-
-            <p className="mt-3 text-sm leading-relaxed text-white/50">
-              {card.desc}
-            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/50">{card.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </div>
 </section>
+
       {/* STRENGTH AGE CALCULATOR */}
       <section
         id="calculator"
