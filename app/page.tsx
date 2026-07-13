@@ -276,15 +276,14 @@ export default function Home() {
         {/* SOFT EDGE VIGNETTE */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
 
-      <header className="relative z-10 flex items-center justify-between">
-          {/* 將 scale-[0.7] 改為 scale-[0.8] 來放大 15% */}
-          <div className="w-max origin-top-left scale-[0.8]">
+  <header className="relative z-10 flex items-center justify-between">
+          {/* 將 scale-[0.8] 改為 scale-[0.95] */}
+          <div className="w-max origin-top-left scale-[0.95]">
             <div
               className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
             >
               WAREHOUSE GYM
             </div>
-
            <div className="mt-2 flex gap-4 text-[10px] uppercase tracking-[0.15em] text-white/45 md:gap-6 md:text-[13px] md:tracking-[0.2em]">
               <span>Strength.</span>
               <span>Performance.</span>
