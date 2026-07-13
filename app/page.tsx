@@ -276,20 +276,21 @@ export default function Home() {
   {/* SOFT EDGE VIGNETTE */}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
 
-  <header className="relative z-10 flex items-center justify-between">
-    <div>
-      <div
-        className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
-      >
-        WAREHOUSE GYM
-      </div>
+<header className="relative z-10 flex items-center justify-between">
+        {/* 在這個 div 加上 scale-[0.7] (縮小為 70%) 與 origin-top-left (以左上角為縮放基準) */}
+        <div className="origin-top-left scale-[0.7]">
+          <div
+            className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
+          >
+            WAREHOUSE GYM
+          </div>
 
-      <div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
-        Strength. Performance. Longevity.
-      </div>
-    </div>
+          <div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
+            Strength. Performance. Longevity.
+          </div>
+        </div>
 
-    <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
+        <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
       <a href="#calculator" className="transition hover:text-white">
         Strength Age
       </a>
