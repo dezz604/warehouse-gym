@@ -276,19 +276,25 @@ export default function Home() {
   {/* SOFT EDGE VIGNETTE */}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
 
-<header className="relative z-10 flex items-center justify-between">
+="relative z-10 flex items-center justify-between">
         {/* 在這個 div 加上 scale-[0.7] (縮小為 70%) 與 origin-top-left (以左上角為縮放基準) */}
-        <div className="origin-top-left scale-[0.7]">
+       <header className="relative z-10 flex items-center justify-between">
+        {/* 加上 w-max 讓外框剛好包住 WAREHOUSE GYM 的寬度 */}
+        <div className="w-max origin-top-left scale-[0.7]">
           <div
             className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
           >
             WAREHOUSE GYM
           </div>
 
-          <div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
-            Strength. Performance. Longevity.
+          {/* 放大字體，並用 flex + justify-between 將三個詞完美撐開對齊左右 */}
+          <div className="mt-2 flex w-full justify-between text-[8px] uppercase tracking-[0.15em] text-white/45 md:text-[10.5px] md:tracking-[0.2em]">
+            <span>Strength.</span>
+            <span>Performance.</span>
+            <span>Longevity.</span>
           </div>
         </div>
+        </div><header className
 
         <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
       <a href="#calculator" className="transition hover:text-white">
@@ -309,7 +315,7 @@ export default function Home() {
   <div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
     <div className="w-full max-w-6xl">
       <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">
-        Taiwan Strength & Longevity Lab
+      Strength & Longevity Lab
       </div>
 
       <h1
