@@ -256,40 +256,34 @@ export default function Home() {
   {/* BASE */}
 <div className="absolute inset-0 bg-[#020202]" />
 
-{/* LEFT SIDE VISIBLE WHITE GRADIENT PANEL */}
-<div className="absolute left-0 top-0 h-full w-[64%] bg-[radial-gradient(circle_at_28%_42%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.12)_24%,rgba(255,255,255,0.055)_48%,rgba(0,0,0,0.05)_72%,transparent_100%)]" />
+{/* MOBILE LEFT LOWER GLOW + DESKTOP LEFT GLOW */}
+<div className="absolute left-[-28%] top-[34%] h-[620px] w-[620px] rounded-full bg-white/[0.14] blur-[120px] md:left-[-18%] md:top-[4%] md:h-[980px] md:w-[980px] md:bg-white/[0.14] md:blur-[155px]" />
 
-{/* LARGE LEFT SOFT GLOW */}
-<div className="absolute left-[-18%] top-[4%] h-[980px] w-[980px] rounded-full bg-white/[0.14] blur-[155px]" />
-<div className="absolute left-[4%] top-[30%] h-[600px] w-[760px] rounded-full bg-white/[0.08] blur-[125px]" />
+<div className="absolute left-[-8%] top-[48%] h-[420px] w-[520px] rounded-full bg-white/[0.08] blur-[105px] md:left-[4%] md:top-[30%] md:h-[600px] md:w-[760px] md:bg-white/[0.08] md:blur-[125px]" />
+
+{/* LEFT GRADIENT PANEL */}
+<div className="absolute left-0 top-0 h-full w-[76%] bg-[radial-gradient(circle_at_24%_48%,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.10)_28%,rgba(255,255,255,0.045)_52%,transparent_100%)] md:w-[64%] md:bg-[radial-gradient(circle_at_28%_42%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.12)_24%,rgba(255,255,255,0.055)_48%,rgba(0,0,0,0.05)_72%,transparent_100%)]" />
 
 {/* RIGHT SIDE DARKNESS */}
-<div className="absolute right-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.28)_38%,rgba(0,0,0,0.78)_100%)]" />
+<div className="absolute right-0 top-0 h-full w-[48%] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.40)_38%,rgba(0,0,0,0.86)_100%)] md:w-[58%] md:bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.28)_38%,rgba(0,0,0,0.78)_100%)]" />
 
 {/* CENTER DEPTH */}
-<div className="absolute left-[18%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.04] blur-[140px]" />
-{/* CENTER DEPTH */}
-<div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.055] blur-[140px]" />
-
-{/* DIAGONAL PREMIUM LIGHT */}
-<div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.035)_22%,transparent_54%)]" />
-
-{/* GRID TEXTURE */}
+<div className="absolute left-[10%] top-[28%] h-[480px] w-[520px] rounded-full bg-white/[0.035] blur-[120px] md:left-[18%] md:top-[18%] md:h-[620px] md:w-[760px] md:bg-white/[0.04] md:blur-[140px]" />
 <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
 {/* EDGE DARKEN ONLY */}
 <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.06)_40%,rgba(0,0,0,0.52)_100%)]" />
   <header className="relative z-10 flex items-center justify-between">
     <div>
-      <div
-        className={`${michroma.className} text-[24px] uppercase tracking-[0.26em] md:text-[30px] lg:text-[36px]`}
-      >
-        WAREHOUSE GYM
-      </div>
+<div
+  className={`${michroma.className} max-w-[320px] text-[20px] uppercase leading-[1.45] tracking-[0.22em] md:max-w-none md:text-[30px] md:leading-none md:tracking-[0.26em] lg:text-[36px]`}
+>
+  WAREHOUSE GYM
+</div>
 
-      <div className="mt-3 text-[10px] uppercase tracking-[0.48em] text-white/42">
-        Strength. Performance. Longevity.
-      </div>
+<div className="mt-3 max-w-[300px] text-[10px] uppercase leading-[1.8] tracking-[0.38em] text-white/42 md:max-w-none md:tracking-[0.48em]">
+  Strength. Performance. Longevity.
+</div>
     </div>
 
     <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
@@ -310,8 +304,7 @@ export default function Home() {
       </a>
     </nav>
   </header>
-
-  <div className="relative z-10 flex min-h-[82vh] items-center pt-28 md:pt-32 lg:pt-36">
+<div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
     <div className="w-full max-w-6xl">
       <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">
         Taiwan Strength & Longevity Lab
@@ -339,7 +332,7 @@ export default function Home() {
       </h1>
 
       <h2
-        className={`${michroma.className} mt-8 max-w-[980px] text-[8.4vw] uppercase leading-[1.05] tracking-[-0.02em] text-transparent md:text-[5.8vw] lg:text-[3.8vw]`}
+        className={`${michroma.className} mt-8 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
         style={{
           WebkitTextStroke: "1.1px rgba(255,255,255,.52)",
         }}
