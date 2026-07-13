@@ -334,7 +334,7 @@ export default function Home() {
       </h1>
 
       <h2
-        className={`${michroma.className} mt-8 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
+        className={`${michroma.className} mt-2 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
         style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
       >
         STAY YOUNG.
