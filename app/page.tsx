@@ -276,15 +276,14 @@ export default function Home() {
   <header className="relative z-10 flex items-center justify-between">
     <div>
 <div
-  className={`${michroma.className} max-w-[320px] text-[20px] uppercase leading-[1.45] tracking-[0.22em] md:max-w-none md:text-[30px] md:leading-none md:tracking-[0.26em] lg:text-[36px]`}
+  className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
 >
   WAREHOUSE GYM
 </div>
 
-<div className="mt-3 max-w-[300px] text-[10px] uppercase leading-[1.8] tracking-[0.38em] text-white/42 md:max-w-none md:tracking-[0.48em]">
+<div className="mt-2 text-[7px] uppercase tracking-[0.3em] text-white/36 md:text-[9px] md:tracking-[0.4em]">
   Strength. Performance. Longevity.
 </div>
-    </div>
 
     <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
       <a href="#training" className="transition hover:text-white">
