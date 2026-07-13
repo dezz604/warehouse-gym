@@ -256,16 +256,18 @@ export default function Home() {
   {/* BASE */}
 <div className="absolute inset-0 bg-[#020202]" />
 
- {/* RIGHT SIDE WHITE GRADIENT PANEL */}
-<div className="absolute right-0 top-0 h-full w-[64%] bg-[radial-gradient(circle_at_62%_42%,rgba(255,255,255,0.34)_0%,rgba(255,255,255,0.19)_24%,rgba(255,255,255,0.08)_48%,transparent_72%)]" />
+{/* LEFT SIDE VISIBLE WHITE GRADIENT PANEL */}
+<div className="absolute left-0 top-0 h-full w-[64%] bg-[radial-gradient(circle_at_28%_42%,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.12)_24%,rgba(255,255,255,0.055)_48%,rgba(0,0,0,0.05)_72%,transparent_100%)]" />
 
-{/* LARGE RIGHT SOFT GLOW */}
-<div className="absolute right-[-18%] top-[4%] h-[980px] w-[980px] rounded-full bg-white/[0.22] blur-[155px]" />
-<div className="absolute right-[-4%] top-[30%] h-[600px] w-[760px] rounded-full bg-white/[0.13] blur-[125px]" />
+{/* LARGE LEFT SOFT GLOW */}
+<div className="absolute left-[-18%] top-[4%] h-[980px] w-[980px] rounded-full bg-white/[0.14] blur-[155px]" />
+<div className="absolute left-[4%] top-[30%] h-[600px] w-[760px] rounded-full bg-white/[0.08] blur-[125px]" />
 
-{/* LEFT SIDE DARKNESS */}
-<div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.30)_44%,transparent_100%)]" />
+{/* RIGHT SIDE DARKNESS */}
+<div className="absolute right-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.28)_38%,rgba(0,0,0,0.78)_100%)]" />
 
+{/* CENTER DEPTH */}
+<div className="absolute left-[18%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.04] blur-[140px]" />
 {/* CENTER DEPTH */}
 <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.055] blur-[140px]" />
 
