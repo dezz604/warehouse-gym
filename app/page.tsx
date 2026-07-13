@@ -329,7 +329,7 @@ export default function Home() {
         </span>
 
         <span className="block ml-[-0.10em] text-white tracking-[-0.075em]">
-          HEAVY.
+          HEAVY
         </span>
       </h1>
 
