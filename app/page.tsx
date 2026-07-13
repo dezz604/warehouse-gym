@@ -254,6 +254,8 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#151515_0%,#050505_45%,#000_100%)]" />
+        <div className="absolute right-[-8%] top-[8%] h-[820px] w-[920px] rounded-full bg-white/[0.075] blur-[150px]" />
+<div className="absolute right-[6%] top-[34%] h-[520px] w-[720px] rounded-full bg-white/[0.045] blur-[130px]" />
         <div className="absolute left-[-18%] top-[8%] h-[720px] w-[720px] rounded-full bg-white/[0.075] blur-[120px]" />
         <div className="absolute right-[-20%] top-[20%] h-[620px] w-[620px] rounded-full bg-white/[0.045] blur-[140px]" />
         <div className="absolute bottom-[-22%] left-[22%] h-[520px] w-[520px] rounded-full bg-white/[0.035] blur-[120px]" />
