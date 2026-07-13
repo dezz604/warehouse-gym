@@ -212,7 +212,7 @@ export default function Home() {
 
   const training: SimpleCard[] = [
     { title: "Strength", desc: "打造更強的力量基礎。" },
-    { title: "Performance", desc: "更快、更強、更有效。" },
+    { title: "Performance", desc: "更快、更強、更有效率。" },
     { title: "Longevity", desc: "延長健康壽命，享受更好的生活。" },
     { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
   ];
@@ -224,7 +224,7 @@ export default function Home() {
     { title: "Yoga Studio", desc: "瑜珈教室" },
     { title: "Muay Thai Zone", desc: "泰拳區" },
     { title: "Recovery Corner", desc: "恢復與放鬆區" },
-    { title: "Performance Coaching", desc: "表現提升指導" },
+    { title: "Performance Coaching", desc: "運動表現訓練" },
     { title: "Community", desc: "強者社群 / 共同進步" },
   ];
 
@@ -284,7 +284,7 @@ export default function Home() {
               WAREHOUSE GYM
             </div>
 
-            <div className="mt-2 flex w-full justify-between text-[8px] uppercase tracking-[0.15em] text-white/45 md:text-[10.5px] md:tracking-[0.2em]">
+           <div className="mt-2 flex gap-4 text-[10px] uppercase tracking-[0.15em] text-white/45 md:gap-6 md:text-[13px] md:tracking-[0.2em]">
               <span>Strength.</span>
               <span>Performance.</span>
               <span>Longevity.</span>
