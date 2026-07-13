@@ -335,11 +335,14 @@ export default function Home() {
 
       <h2
         className={`${michroma.className} mt-8 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
-        style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
+        style={{ 
+          WebkitTextStroke: "1.1px rgba(255,255,255,.52)",
+          transform: "scaleY(1.4)", 
+          transformOrigin: "left center" 
+        }}
       >
         STAY YOUNG.
       </h2>
-
       <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
         Your body is aging. Your strength does not have to.
         <br />
