@@ -212,7 +212,7 @@ export default function Home() {
 
   const training: SimpleCard[] = [
     { title: "Strength", desc: "打造更強的力量基礎。" },
-    { title: "Performance", desc: "更快、更強、更有效率。" },
+    { title: "Performance", desc: "更快、更強、更有效。" },
     { title: "Longevity", desc: "延長健康壽命，享受更好的生活。" },
     { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
   ];
@@ -251,131 +251,126 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
-{/* HERO */}
-<section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
-  {/* BASE */}
-  <div className="absolute inset-0 bg-[#020202]" />
+      {/* HERO */}
+      <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
+        {/* BASE */}
+        <div className="absolute inset-0 bg-[#020202]" />
 
-  {/* RIGHT SIDE WHITE GLOW */}
-  <div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.20] blur-[180px]" />
-  <div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.13] blur-[150px]" />
-  <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.07] blur-[130px]" />
+        {/* RIGHT SIDE WHITE GLOW */}
+        <div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.20] blur-[180px]" />
+        <div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.13] blur-[150px]" />
+        <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.07] blur-[130px]" />
 
-  {/* CENTER TRANSITION */}
-  <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.045] blur-[140px]" />
+        {/* CENTER TRANSITION */}
+        <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.045] blur-[140px]" />
 
-  {/* LEFT SIDE DARKNESS */}
-  <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
+        {/* LEFT SIDE DARKNESS */}
+        <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
 
-  {/* DIAGONAL PREMIUM LIGHT */}
-  <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.025)_26%,transparent_55%)]" />
+        {/* DIAGONAL PREMIUM LIGHT */}
+        <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.025)_26%,transparent_55%)]" />
 
-  {/* GRID */}
-  <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.20)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.20)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        {/* GRID */}
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.20)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.20)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-  {/* SOFT EDGE VIGNETTE */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
+        {/* SOFT EDGE VIGNETTE */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
 
-="relative z-10 flex items-center justify-between">
-        {/* 在這個 div 加上 scale-[0.7] (縮小為 70%) 與 origin-top-left (以左上角為縮放基準) */}
-       <header className="relative z-10 flex items-center justify-between">
-        {/* 加上 w-max 讓外框剛好包住 WAREHOUSE GYM 的寬度 */}
-        <div className="w-max origin-top-left scale-[0.7]">
-          <div
-            className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
-          >
-            WAREHOUSE GYM
+        <header className="relative z-10 flex items-center justify-between">
+          <div className="w-max origin-top-left scale-[0.7]">
+            <div
+              className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}
+            >
+              WAREHOUSE GYM
+            </div>
+
+            <div className="mt-2 flex w-full justify-between text-[8px] uppercase tracking-[0.15em] text-white/45 md:text-[10.5px] md:tracking-[0.2em]">
+              <span>Strength.</span>
+              <span>Performance.</span>
+              <span>Longevity.</span>
+            </div>
           </div>
 
-          {/* 放大字體，並用 flex + justify-between 將三個詞完美撐開對齊左右 */}
-          <div className="mt-2 flex w-full justify-between text-[8px] uppercase tracking-[0.15em] text-white/45 md:text-[10.5px] md:tracking-[0.2em]">
-            <span>Strength.</span>
-            <span>Performance.</span>
-            <span>Longevity.</span>
+          <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
+            <a href="#calculator" className="transition hover:text-white">
+              Strength Age
+            </a>
+            <a href="#training" className="transition hover:text-white">
+              Training
+            </a>
+            <a href="#technology" className="transition hover:text-white">
+              Technology
+            </a>
+            <a href="#membership" className="transition hover:text-white">
+              Membership
+            </a>
+          </nav>
+        </header>
+
+        <div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
+          <div className="w-full max-w-6xl">
+            <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">
+              Taiwan Strength & Longevity Lab
+            </div>
+
+            <h1
+              className="max-w-[820px] text-[15.2vw] font-normal uppercase leading-[0.76] tracking-[-0.075em] md:text-[9.8vw] lg:text-[6.25vw]"
+              style={{
+                fontFamily:
+                  "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+                transform: "scaleX(0.92)",
+                transformOrigin: "left center",
+              }}
+            >
+              <span className="block text-white tracking-normal">
+                <span className="inline-block ml-[-0.10em]">L</span>
+                <span className="inline-block ml-[0.10em]">I</span>
+                <span className="inline-block ml-[0.04em]">F</span>
+                <span className="inline-block ml-[0.06em]">T</span>
+              </span>
+
+              <span className="block ml-[-0.10em] text-white tracking-[-0.075em]">
+                HEAVY
+              </span>
+            </h1>
+
+            <h2
+              className={`${michroma.className} mt-2 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
+              style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
+            >
+              STAY YOUNG.
+            </h2>
+
+            <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
+              Your body is aging. Your strength does not have to.
+              <br />
+              Warehouse Gym measures strength, performance and longevity as one unified system.
+              <br />
+              <span className="mt-3 block text-white/48">
+                Warehouse Gym 不只是健身房。我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
+                年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。
+                透過肌力、爆發力、體能與心肺數據，我們幫助你建立一副能支撐未來的身體。
+              </span>
+            </p>
+
+            <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
+              {[
+                { title: "Data Driven", desc: "科學評估每日身體狀態，讓訓練更具邏輯。" },
+                { title: "Built For Results", desc: "力量、速度、心肺能力都能被追蹤。" },
+                { title: "Longevity Focus", desc: "從力量、肌肉量與最大攝氧量建立長期健康資本。" },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="min-h-[92px] rounded-2xl border border-white/14 bg-white/[0.025] p-6 backdrop-blur-sm"
+                >
+                  <div className="text-base font-semibold">{card.title}</div>
+                  <p className="mt-3 text-sm leading-relaxed text-white/50">{card.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        </div><header className
-
-        <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
-      <a href="#calculator" className="transition hover:text-white">
-        Strength Age
-      </a>
-      <a href="#training" className="transition hover:text-white">
-        Training
-      </a>
-      <a href="#technology" className="transition hover:text-white">
-        Technology
-      </a>
-      <a href="#membership" className="transition hover:text-white">
-        Membership
-      </a>
-    </nav>
-  </header>
-
-  <div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
-    <div className="w-full max-w-6xl">
-      <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">
-      Strength & Longevity Lab
-      </div>
-
-      <h1
-        className="max-w-[820px] text-[15.2vw] font-normal uppercase leading-[0.76] tracking-[-0.075em] md:text-[9.8vw] lg:text-[6.25vw]"
-        style={{
-          fontFamily:
-            "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
-          transform: "scaleX(0.92)",
-          transformOrigin: "left center",
-        }}
-      >
-       <span className="block text-white tracking-normal">
-          <span className="inline-block ml-[-0.10em]">L</span>
-          <span className="inline-block ml-[0.10em]">I</span>
-          {/* 這裡把原本的 ml-[-0.14em] 改為 ml-[0.04em] 來拉開與 I 的距離 */}
-          <span className="inline-block ml-[0.04em]">F</span>
-          <span className="inline-block ml-[0.06em]">T</span>
-        </span>
-
-        <span className="block ml-[-0.10em] text-white tracking-[-0.075em]">
-          HEAVY
-        </span>
-      </h1>
-
-      <h2
-        className={`${michroma.className} mt-2 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
-        style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
-      >
-        STAY YOUNG.
-      </h2>
-      <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
-        Your body is aging. Your strength does not have to.
-        <br />
-        Warehouse Gym measures strength, performance and longevity as one unified system.
-        <br />
-        <span className="mt-3 block text-white/48">
-          Warehouse Gym 不只是健身房。我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。
-          年齡無法逆轉，但力量可以被訓練，而且不受年齡限制。
-          透過肌力、爆發力、體能與心肺數據，我們幫助你建立一副能支撐未來的身體。
-        </span>
-      </p>
-
-      <div className="mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
-        {[
-          { title: "Data Driven", desc: "科學評估每日身體狀態，讓訓練更具邏輯。" },
-          { title: "Built For Results", desc: "力量、速度、心肺能力都能被追蹤。" },
-          { title: "Longevity Focus", desc: "從力量、肌肉量與最大攝氧量建立長期健康資本。" },
-        ].map((card) => (
-          <div
-            key={card.title}
-            className="min-h-[92px] rounded-2xl border border-white/14 bg-white/[0.025] p-6 backdrop-blur-sm"
-          >
-            <div className="text-base font-semibold">{card.title}</div>
-            <p className="mt-3 text-sm leading-relaxed text-white/50">{card.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* STRENGTH AGE CALCULATOR */}
       <section
@@ -745,17 +740,19 @@ export default function Home() {
       <footer className="mt-56 border-t border-white/10 px-6 py-20 md:px-14 lg:px-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-        <div>
-        <div
-          className={`${michroma.className} text-[11px] uppercase tracking-[0.18em] md:text-[15px] md:tracking-[0.22em] lg:text-[20px]`}
-        >
-          WAREHOUSE GYM
-        </div>
+            <div className="w-max origin-top-left scale-[0.8]">
+              <div
+                className={`${michroma.className} text-[22px] uppercase tracking-[0.22em] text-white md:text-[26px] lg:text-[30px]`}
+              >
+                WAREHOUSE GYM
+              </div>
 
-        <div className="mt-1.5 text-[5px] uppercase tracking-[0.3em] text-white/36 md:text-[6px] md:tracking-[0.4em]">
-          Strength. Performance. Longevity.
-        </div>
-      </div>
+              <div className="mt-3 flex w-full justify-between text-[11px] uppercase tracking-[0.15em] text-white/38 md:text-[13px] md:tracking-[0.2em]">
+                <span>Strength.</span>
+                <span>Performance.</span>
+                <span>Longevity.</span>
+              </div>
+            </div>
 
             <nav className="flex flex-wrap gap-x-10 gap-y-4 text-[12px] uppercase tracking-[0.24em] text-white/50 md:justify-end">
               <a href="#calculator" className="transition hover:text-white">
@@ -781,37 +778,37 @@ export default function Home() {
               <div className="flex items-center gap-5">
                 <div className="h-[50px] w-[75px] shrink-0 overflow-hidden rounded-[2px] border border-white/35 bg-white shadow-[0_0_28px_rgba(255,255,255,0.14)]">
                   <svg
-  viewBox="0 0 900 600"
-  className="h-full w-full"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="中華民國國旗"
-  role="img"
-  shapeRendering="geometricPrecision"
->
-  <rect width="900" height="600" fill="#FE0000" />
-  <rect x="0" y="0" width="450" height="300" fill="#000095" />
+                    viewBox="0 0 900 600"
+                    className="h-full w-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="中華民國國旗"
+                    role="img"
+                    shapeRendering="geometricPrecision"
+                  >
+                    <rect width="900" height="600" fill="#FE0000" />
+                    <rect x="0" y="0" width="450" height="300" fill="#000095" />
 
-  <g transform="translate(225 150)">
-    <g fill="#FFFFFF">
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(0)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(30)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(60)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(90)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(120)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(150)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(180)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(210)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(240)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(270)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(300)" />
-      <polygon points="0,-105 20,-42 -20,-42" transform="rotate(330)" />
+                    <g transform="translate(225 150)">
+                      <g fill="#FFFFFF">
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(0)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(30)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(60)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(90)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(120)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(150)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(180)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(210)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(240)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(270)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(300)" />
+                        <polygon points="0,-105 20,-42 -20,-42" transform="rotate(330)" />
 
-      <circle r="58" />
-    </g>
+                        <circle r="58" />
+                      </g>
 
-    <circle r="34" fill="#000095" />
-  </g>
-</svg>
+                      <circle r="34" fill="#000095" />
+                    </g>
+                  </svg>
                 </div>
 
                 <div>
