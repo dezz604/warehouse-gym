@@ -738,17 +738,17 @@ export default function Home() {
       <footer className="mt-56 border-t border-white/10 px-6 py-20 md:px-14 lg:px-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-            <div>
-              <div
-                className={`${michroma.className} text-[22px] uppercase tracking-[0.22em] text-white md:text-[26px] lg:text-[30px]`}
-              >
-                WAREHOUSE GYM
-              </div>
+        <div>
+        <div
+          className={`${michroma.className} text-[11px] uppercase tracking-[0.18em] md:text-[15px] md:tracking-[0.22em] lg:text-[20px]`}
+        >
+          WAREHOUSE GYM
+        </div>
 
-              <div className="mt-3 text-[10px] uppercase tracking-[0.34em] text-white/38">
-                Strength. Performance. Longevity.
-              </div>
-            </div>
+        <div className="mt-1.5 text-[5px] uppercase tracking-[0.3em] text-white/36 md:text-[6px] md:tracking-[0.4em]">
+          Strength. Performance. Longevity.
+        </div>
+      </div>
 
             <nav className="flex flex-wrap gap-x-10 gap-y-4 text-[12px] uppercase tracking-[0.24em] text-white/50 md:justify-end">
               <a href="#calculator" className="transition hover:text-white">
