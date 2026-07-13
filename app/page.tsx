@@ -320,10 +320,11 @@ export default function Home() {
           transformOrigin: "left center",
         }}
       >
-        <span className="block text-white tracking-normal">
+       <span className="block text-white tracking-normal">
           <span className="inline-block ml-[-0.10em]">L</span>
           <span className="inline-block ml-[0.10em]">I</span>
-          <span className="inline-block ml-[-0.14em]">F</span>
+          {/* 這裡把原本的 ml-[-0.14em] 改為 ml-[0.04em] 來拉開與 I 的距離 */}
+          <span className="inline-block ml-[0.04em]">F</span>
           <span className="inline-block ml-[0.06em]">T</span>
         </span>
 
