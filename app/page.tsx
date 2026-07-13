@@ -212,7 +212,7 @@ export default function Home() {
 
   const training: SimpleCard[] = [
     { title: "Strength", desc: "打造更強的力量基礎。" },
-    { title: "Performance", desc: "更快、更強、更有效。" },
+    { title: "Performance", desc: "更快、更強、更有效率。" },
     { title: "Longevity", desc: "延長健康壽命，享受更好的生活。" },
     { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
   ];
@@ -335,11 +335,7 @@ export default function Home() {
 
       <h2
         className={`${michroma.className} mt-8 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`}
-        style={{ 
-          WebkitTextStroke: "1.1px rgba(255,255,255,.52)",
-          transform: "scaleY(1.4)", 
-          transformOrigin: "left center" 
-        }}
+        style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}
       >
         STAY YOUNG.
       </h2>
