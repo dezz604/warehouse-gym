@@ -284,7 +284,7 @@ export default function Home() {
             >
               WAREHOUSE GYM
             </div>
-           <div className="mt-2 flex gap-4 text-[10px] uppercase tracking-[0.15em] text-white/45 md:gap-6 md:text-[13px] md:tracking-[0.2em]">
+         <div className="mt-2 flex gap-4 text-[8px] uppercase tracking-[0.15em] text-white/45 md:gap-6 md:text-[10px] md:tracking-[0.2em]">
               <span>Strength.</span>
               <span>Performance.</span>
               <span>Longevity.</span>
