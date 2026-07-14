@@ -18,6 +18,7 @@ type Plan = {
 type SimpleCard = {
   title: string;
   desc: string;
+  image?: string;
 };
 
 type MethodItem = {
@@ -217,16 +218,16 @@ export default function Home() {
     { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
   ];
 
-  const facilities: SimpleCard[] = [
-    { title: "Warehouse Strength Floor", desc: "自由重量訓練區" },
-    { title: "Machine Training Zone", desc: "固定式器械區" },
-    { title: "Group Class Studio", desc: "團課教室" },
-    { title: "Yoga Studio", desc: "瑜珈教室" },
-    { title: "Muay Thai Zone", desc: "泰拳區" },
-    { title: "Recovery Corner", desc: "恢復與放鬆區" },
-    { title: "Performance Coaching", desc: "運動表現訓練" },
-    { title: "Community", desc: "強者社群 / 共同進步" },
-  ];
+const facilities: SimpleCard[] = [
+  { title: "Warehouse Strength Floor", desc: "自由重量訓練區", image: "/floor.jpg" },
+  { title: "Machine Training Zone", desc: "固定式器械區", image: "/machine.jpg" },
+  { title: "Group Class Studio", desc: "團課教室", image: "/class.jpg" },
+  { title: "Yoga Studio", desc: "瑜珈教室", image: "/yoga.jpg" },
+  { title: "Muay Thai Zone", desc: "泰拳區", image: "/muaythai.jpg" },
+  { title: "Recovery Corner", desc: "恢復與放鬆區", image: "/recovery.jpg" },
+  { title: "Performance Coaching", desc: "運動表現訓練", image: "/coaching.jpg" },
+  { title: "Community", desc: "強者社群 / 共同進步", image: "/community.jpg" },
+];
 
   const plans: Plan[] = [
     {
@@ -474,19 +475,26 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-4">
+<div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-4">
           {facilities.map((item, index) => (
             <div
               key={item.title}
-              className={`facility-card min-h-[170px] ${
+              className={`facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/12 p-6 ${
                 index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
               }`}
             >
-              <div className="mt-auto">
-                <div className="text-xs font-semibold uppercase">
-                  {item.title}
-                </div>
+              {/* 背景圖片 */}
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover opacity-40 transition-opacity hover:opacity-60"
+                />
+              )}
 
+              {/* 卡片內容 */}
+              <div className="relative z-10 mt-auto">
+                <div className="text-xs font-semibold uppercase">{item.title}</div>
                 <div className="mt-1 text-xs text-white/45">{item.desc}</div>
               </div>
             </div>
