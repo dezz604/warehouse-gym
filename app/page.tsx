@@ -479,23 +479,25 @@ const facilities: SimpleCard[] = [
           {facilities.map((item, index) => (
             <div
               key={item.title}
-              className={`facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/12 p-6 ${
+              className={`facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/10 p-6 ${
                 index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
               }`}
             >
-              {/* 背景圖片 */}
+              {/* 背景圖片：調高不透明度，讓圖片更清晰 */}
               {item.image && (
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 h-full w-full object-cover opacity-40 transition-opacity hover:opacity-60"
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity hover:opacity-80"
+                  style={{ backgroundImage: `url('${item.image}')` }}
                 />
               )}
+              
+              {/* 黑色漸層遮罩：加強下方的陰影，讓文字更清楚且光圈效果更自然 */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
               {/* 卡片內容 */}
               <div className="relative z-10 mt-auto">
                 <div className="text-xs font-semibold uppercase">{item.title}</div>
-                <div className="mt-1 text-xs text-white/45">{item.desc}</div>
+                <div className="mt-1 text-xs text-white/60">{item.desc}</div>
               </div>
             </div>
           ))}
