@@ -219,16 +219,16 @@ export default function Home() {
   ];
 
 const facilities: SimpleCard[] = [
-  { title: "Warehouse Strength Floor", desc: "自由重量訓練區", image: "/floor.jpg" },
-  { title: "Machine Training Zone", desc: "固定式器械區", image: "/machine.jpg" },
-  { title: "Group Class Studio", desc: "團課教室", image: "/class.jpg" },
-  { title: "Yoga Studio", desc: "瑜珈教室", image: "/yoga.jpg" },
-  { title: "Muay Thai Zone", desc: "泰拳區", image: "/muaythai.jpg" },
-  { title: "Recovery Corner", desc: "恢復與放鬆區", image: "/recovery.jpg" },
-  { title: "Performance Coaching", desc: "運動表現訓練", image: "/coaching.jpg" },
-  { title: "Community", desc: "強者社群 / 共同進步", image: "/community.jpg" },
-];
-
+    { title: "Warehouse Strength Floor", desc: "自由重量訓練區", image: "/floor.jpg" },
+    { title: "Machine Training Zone", desc: "固定式器械區", image: "/machine.jpg" },
+    { title: "Cardio Zone", desc: "心肺訓練區", image: "/cardio.jpg" }, // 加入這行
+    { title: "Group Class Studio", desc: "團課教室", image: "/class.jpg" },
+    { title: "Yoga Studio", desc: "瑜珈教室", image: "/yoga.jpg" },
+    { title: "Muay Thai Zone", desc: "泰拳區", image: "/muaythai.jpg" },
+    { title: "Recovery Corner", desc: "恢復與放鬆區", image: "/recovery.jpg" },
+    { title: "Performance Coaching", desc: "運動表現訓練", image: "/coaching.jpg" },
+    { title: "Community", desc: "強者社群 / 共同進步", image: "/community.jpg" },
+  ];
   const plans: Plan[] = [
     {
       name: "Essential",
