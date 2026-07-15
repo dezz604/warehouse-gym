@@ -264,7 +264,7 @@ const facilities: SimpleCard[] = [
 <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.03] blur-[150px]" />
 
 {/* CENTER TRANSITION - 進一步調低 */}
-<div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.02] blur-[160px]" />ㄔㄛ
+<div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.02] blur-[160px]" />
         {/* LEFT SIDE DARKNESS */}
         <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
 
@@ -453,6 +453,7 @@ const facilities: SimpleCard[] = [
       </section>
 
       {/* SPACE */}
+
       <section className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20">
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -476,28 +477,27 @@ const facilities: SimpleCard[] = [
         </div>
 
 <div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-4">
-{facilities.map((item, index) => (
-          <div
-            key={item.title}
-            className={`group facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/10 p-6 ${
-              index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
-            }`}
-          >
-            {item.image && (
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-300 group-hover:opacity-80"
-                style={{ backgroundImage: `url('${item.image}')` }}
-              />
-            )}
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-            <div className="relative z-10 mt-auto">
-              <div className="text-xs font-semibold uppercase">{item.title}</div>
-              <div className="mt-1 text-xs text-white/60">{item.desc}</div>
-            </div>
-          </div>
-        ))}ㄔ
+  {facilities.map((item, index) => (
+    <div
+      key={item.title}
+      className={`group facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/10 p-6 ${
+        index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
+      }`}
+    >
+      {item.image && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-300 group-hover:opacity-80"
+          style={{ backgroundImage: `url('${item.image}')` }}
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="relative z-10 mt-auto">
+        <div className="text-xs font-semibold uppercase">{item.title}</div>
+        <div className="mt-1 text-xs text-white/60">{item.desc}</div>
+      </div>
+    </div>
+  ))}
+</div>
       </section>
 
       {/* TRAIN FOR WHAT LASTS */}
