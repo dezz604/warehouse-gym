@@ -500,7 +500,7 @@ const facilities: SimpleCard[] = [
               <div className="mt-1 text-xs text-white/60">{item.desc}</div>
             </div>
           </div>
-        ))}
+        
       </section>
 
       {/* TRAIN FOR WHAT LASTS */}
