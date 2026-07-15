@@ -875,13 +875,13 @@ const facilities: SimpleCard[] = [
           border: none;
         }
       `}</style>
- <div style={{ 
+<div style={{ 
   position: 'fixed', 
   right: '20px', 
   top: '50%', 
   color: 'white', 
   opacity: 0.3, 
-  fontSize: '90px',
+  fontSize: '45px',
   fontFamily: 'Michroma, sans-serif'
 }}>
   COMING SOON...
