@@ -875,6 +875,9 @@ const facilities: SimpleCard[] = [
           border: none;
         }
       `}</style>
+      <div style={{ position: 'fixed', right: '20px', top: '50%', color: 'white', opacity: 0.3 }}>
+  COMING SOON...
+</div>
     </main>
   );
 }
