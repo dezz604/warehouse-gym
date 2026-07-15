@@ -486,11 +486,11 @@ const facilities: SimpleCard[] = [
     >
       {item.image && (
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-300 group-hover:opacity-80"
+          className="absolute inset-0 bg-cover bg-center opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           style={{ backgroundImage: `url('${item.image}')` }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
       <div className="relative z-10 mt-auto">
         <div className="text-xs font-semibold uppercase">{item.title}</div>
         <div className="mt-1 text-xs text-white/60">{item.desc}</div>
