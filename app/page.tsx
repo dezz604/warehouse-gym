@@ -881,10 +881,10 @@ const facilities: SimpleCard[] = [
   top: '50%', 
   color: 'white', 
   opacity: 0.3, 
-  fontSize: '45px',
+  fontSize: '32px',
   fontFamily: 'Michroma, sans-serif'
 }}>
-  COMING SOON 敬請期待
+  COMING SOON...
 </div>
     </main>
   );
