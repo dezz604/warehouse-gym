@@ -221,7 +221,7 @@ export default function Home() {
 const facilities: SimpleCard[] = [
     { title: "Warehouse Strength Floor", desc: "自由重量訓練區", image: "/floor.jpg" },
     { title: "Machine Training Zone", desc: "固定式器械區", image: "/machine.jpg" },
-    { title: "Cardio Zone [TEST]", desc: "心肺訓練區", image: "/cardio.jpg" },
+    { title: "Cardio Zone", desc: "心肺訓練區", image: "/cardio.jpg" },
     { title: "Group Class Studio", desc: "團課教室", image: "/class.jpg" },
     { title: "Yoga Studio", desc: "瑜珈教室", image: "/yoga.jpg" },
     { title: "Muay Thai Zone", desc: "泰拳區", image: "/muaythai.jpg" },
