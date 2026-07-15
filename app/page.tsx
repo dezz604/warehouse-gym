@@ -884,8 +884,7 @@ const facilities: SimpleCard[] = [
   fontSize: '45px',
   fontFamily: 'Michroma, sans-serif'
 }}>
-  COMING SOON...
-  敬請期待
+  COMING SOON 敬請期待
 </div>
     </main>
   );
