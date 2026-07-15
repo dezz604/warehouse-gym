@@ -258,13 +258,13 @@ const facilities: SimpleCard[] = [
         <div className="absolute inset-0 bg-[#020202]" />
 
         {/* RIGHT SIDE WHITE GLOW */}
-        <div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.20] blur-[180px]" />
-        <div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.13] blur-[150px]" />
-        <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.07] blur-[130px]" />
+        {/* RIGHT SIDE WHITE GLOW - 將透明度調低，模糊值(blur)稍微加大以柔化邊緣 */}
+<div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.08] blur-[220px]" /> 
+<div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.05] blur-[180px]" />
+<div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.03] blur-[150px]" />
 
-        {/* CENTER TRANSITION */}
-        <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.045] blur-[140px]" />
-
+{/* CENTER TRANSITION - 進一步調低 */}
+<div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.02] blur-[160px]" />ㄔㄛ
         {/* LEFT SIDE DARKNESS */}
         <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
 
@@ -477,31 +477,30 @@ const facilities: SimpleCard[] = [
 
 <div className="mx-auto mt-12 grid max-w-7xl gap-4 md:grid-cols-4">
           {facilities.map((item, index) => (
-            <div
-              key={item.title}
-              className={`facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/10 p-6 ${
-                index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
-              }`}
-            >
-              {/* 背景圖片：調高不透明度，讓圖片更清晰 */}
-              {item.image && (
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity hover:opacity-80"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                />
-              )}
-              
-              {/* 黑色漸層遮罩：加強下方的陰影，讓文字更清楚且光圈效果更自然 */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+          <div
+            key={item.title}
+            className={`group facility-card relative flex min-h-[170px] overflow-hidden rounded-xl border border-white/10 p-6 ${
+              index === 0 ? "md:col-span-2 md:row-span-2 md:min-h-[360px]" : ""
+            }`}
+          >
+            {/* 背景圖片 */}
+            {item.image && (
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-300 group-hover:opacity-80"
+                style={{ backgroundImage: `url('${item.image}')` }}
+              />
+            )}
+            
+            {/* 黑色漸層遮罩 */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-              {/* 卡片內容 */}
-              <div className="relative z-10 mt-auto">
-                <div className="text-xs font-semibold uppercase">{item.title}</div>
-                <div className="mt-1 text-xs text-white/60">{item.desc}</div>
-              </div>
+            {/* 卡片內容 */}
+            <div className="relative z-10 mt-auto">
+              <div className="text-xs font-semibold uppercase">{item.title}</div>
+              <div className="mt-1 text-xs text-white/60">{item.desc}</div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
       {/* TRAIN FOR WHAT LASTS */}
@@ -844,18 +843,16 @@ const facilities: SimpleCard[] = [
           font-weight: 650;
           text-transform: uppercase;
         }
-
-        .facility-card {
+.facility-card {
           display: flex;
           padding: 1.5rem;
           border: 1px solid rgba(255,255,255,0.12);
           border-radius: 1rem;
           background:
-            linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.015)),
-            radial-gradient(circle at 70% 20%, rgba(255,255,255,0.11), transparent 30%);
+            linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+            radial-gradient(circle at 70% 20%, rgba(255,255,255,0.04), transparent 40%);
           overflow: hidden;
         }
-
         .calculator-slider {
           appearance: none;
           height: 2px;
