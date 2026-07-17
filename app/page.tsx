@@ -490,7 +490,7 @@ const facilities: SimpleCard[] = [
           style={{ backgroundImage: `url('${item.image}')` }}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
+     <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-white/5 to-transparent pointer-events-none" />
       <div className="relative z-10 mt-auto">
         <div className="text-xs font-semibold uppercase">{item.title}</div>
         <div className="mt-1 text-xs text-white/60">{item.desc}</div>
