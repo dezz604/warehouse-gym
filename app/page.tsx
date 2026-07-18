@@ -1,64 +1,36 @@
-"use client";
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+// ... 這裡保留你原本的 imports (React, Michroma 等)
 
-import { type ReactNode, useMemo, useState } from "react";
-import { Michroma } from "next/font/google";
+export default function Home() {
+  const [stage, setStage] = useState(0);
 
-const michroma = Michroma({
-  weight: "400",
-  subsets: ["latin"],
-});
+  useEffect(() => {
+    const timer1 = setTimeout(() => setStage(1), 2500);
+    const timer2 = setTimeout(() => setStage(2), 5000);
+    return () => { clearTimeout(timer1); clearTimeout(timer2); };
+  }, []);
 
-type Plan = {
-  name: string;
-  sub: string;
-  items: string[];
-  cta: string;
-};
-
-type SimpleCard = {
-  title: string;
-  desc: string;
-  image?: string;
-};
-
-type MethodItem = {
-  num: string;
-  title: string;
-  desc: string;
-};
-
-function SliderRow({
-  label,
-  value,
-  min,
-  max,
-  onChange,
-}: {
-  label: ReactNode;
-  value: number;
-  min: number;
-  max: number;
-  onChange: (value: number) => void;
-}) {
   return (
-    <div>
-      <div className="mb-2 flex items-center justify-between">
-        <div className="text-xs uppercase tracking-[0.18em] text-white/45">
-          {label}
-        </div>
+    <main className="relative min-h-screen bg-black text-white">
+      {/* 動畫層 (強制置於最上方) */}
+      <AnimatePresence>
+        {stage < 2 && (
+          <motion.div 
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
+            exit={{ opacity: 0 }}
+          >
+            {/* 動畫內容 */}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        <div className="font-mono text-sm text-white/80">{value}</div>
+      {/* 原本的頁面內容 */}
+      <div className="relative z-0">
+        {/* 你的 SliderRow 和其他組件 */}
       </div>
-
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={value}
-        onChange={(event) => onChange(Number(event.target.value))}
-        className="calculator-slider w-full"
-      />
-    </div>
+    </main>
   );
 }
 
