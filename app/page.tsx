@@ -518,41 +518,36 @@ const facilities: SimpleCard[] = [
       <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
       {/* --- 在此插入這整段 --- */}
       <AnimatePresence>
-  {showAnimation && (
-    <motion.div 
-      exit={{ opacity: 0, transition: { duration: 0.8 } }}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black"
-    >
-      {/* 底部工業氛圍光圈 */}
-      <div className="absolute h-[600px] w-[600px] rounded-full bg-white/[0.02] blur-[120px]" />
-      
-      <div 
-        className="relative z-10 text-center space-y-8 uppercase tracking-[0.2em]"
-        style={{ 
-          fontFamily: '"DIN Next W01 Stencil", "DIN Schablonierschrift", "Impact", sans-serif',
-          fontStyle: "normal",
-          fontWeight: 700
-        }}
-      >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <p className="text-4xl md:text-6xl opacity-70">Age.</p>
-          <p className="text-4xl md:text-6xl opacity-70">Weakness.</p>
-          <p className="text-4xl md:text-6xl opacity-70">Frailty.</p>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 2.2, duration: 1 }}
-        >
-          <p className="text-4xl md:text-6xl">Strength.</p>
-          <p className="text-4xl md:text-6xl">Performance.</p>
-          <p className="text-5xl md:text-7xl font-bold tracking-[0.25em]">Longevity.</p>
-        </motion.div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+        {showAnimation && (
+          <motion.div 
+            exit={{ opacity: 0, transition: { duration: 0.8 } }}
+            className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black ${michroma.className}`}
+          >
+            <div className="relative z-10 text-center space-y-10 uppercase tracking-[0.15em]">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                <p className="text-4xl md:text-6xl opacity-70">Age.</p>
+                <p className="text-4xl md:text-6xl opacity-70">Weakness.</p>
+                <p className="text-4xl md:text-6xl opacity-70">Frailty.</p>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ delay: 2.2, duration: 1 }}
+              >
+                <p className="text-4xl md:text-6xl">Strength.</p>
+                <p className="text-4xl md:text-6xl">Performance.</p>
+                <p 
+                  className="text-5xl md:text-7xl text-transparent"
+                  style={{ WebkitTextStroke: "1px white" }}
+                >
+                  Longevity.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* HERO */}
 
       <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
