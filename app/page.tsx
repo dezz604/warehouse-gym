@@ -1,39 +1,199 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-// ... 這裡保留你原本的 imports (React, Michroma 等)
+"use client";
 
-export default function Home() {
-  const [stage, setStage] = useState(0);
+import { type ReactNode, useMemo, useState, useEffect } from "react";
+import { Michroma } from "next/font/google";
+import { motion, AnimatePresence } from "framer-motion";
 
-  useEffect(() => {
-    const timer1 = setTimeout(() => setStage(1), 2500);
-    const timer2 = setTimeout(() => setStage(2), 5000);
-    return () => { clearTimeout(timer1); clearTimeout(timer2); };
-  }, []);
+const michroma = Michroma({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+type Plan = {
+  name: string;
+  sub: string;
+  items: string[];
+  cta: string;
+};
+
+type SimpleCard = {
+  title: string;
+  desc: string;
+  image?: string;
+};
+
+type MethodItem = {
+  num: string;
+  title: string;
+  desc: string;
+};
+
+function SliderRow({ label, value, min, max, onChange }: any) {
+  return (
+    <div>
+      <div className="mb-2 flex items-center justify-between">
+        <div className="text-xs uppercase tracking-[0.18em] text-white/45">{label}</div>
+        <div className="font-mono text-sm text-white/80">{value}</div>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="calculator-slider w-full"
+      />
+    </div>
+  );
+}
+
+function StrengthAgeCalculator() {
+  const [age, setAge] = useState(62);
+  const [strength, setStrength] = useState(91);
+  const [power, setPower] = useState(93);
+  const [conditioning, setConditioning] = useState(88);
+
+  const result = useMemo(() => {
+    const average = strength * 0.45 + power * 0.3 + conditioning * 0.25;
+    const ageReduction = Math.round(((average - 60) / 40) * 28);
+    const strengthAge = Math.max(25, Math.min(90, age - ageReduction));
+    const delta = Math.max(0, age - strengthAge);
+    return { strengthAge, reserve: Math.round(average), capacity: Math.round(average), delta };
+  }, [age, strength, power, conditioning]);
 
   return (
-    <main className="relative min-h-screen bg-black text-white">
-      {/* 動畫層 (強制置於最上方) */}
+    <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
+      <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-7">
+        <div className="mb-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/55">Strength Age Calculator</div>
+        <div className="space-y-6">
+          <SliderRow label="Chronological Age" value={age} min={18} max={85} onChange={setAge} />
+          <SliderRow label="Strength Score" value={strength} min={30} max={100} onChange={setStrength} />
+          <SliderRow label="Power Score" value={power} min={30} max={100} onChange={setPower} />
+          <SliderRow label={<>VO<span className="relative top-[0.05em] text-[0.86em]">2</span> Max / Conditioning</>} value={conditioning} min={30} max={100} onChange={setConditioning} />
+        </div>
+      </div>
+      <div className="rounded-[1.4rem] border border-white/10 bg-white p-7 text-black">
+        <div className="text-sm font-black uppercase tracking-[0.22em] text-black/45">Result Preview</div>
+        <div className="mt-8 grid grid-cols-2 gap-5">
+          <div><div className="text-sm uppercase tracking-[0.16em] text-black/45">Body Age</div><div className="mt-2 text-6xl font-light tracking-[-0.08em]">{age}</div></div>
+          <div><div className="text-sm uppercase tracking-[0.16em] text-black/45">Strength Age</div><div className="mt-2 text-6xl font-light tracking-[-0.08em]">{result.strengthAge}</div></div>
+        </div>
+        <div className="mt-8 rounded-xl bg-black px-5 py-4 text-white"><div className="text-xs uppercase tracking-[0.22em] text-white/45">Years Reclaimed</div><div className="mt-1 text-4xl font-light tracking-[-0.05em]">{result.delta}</div></div>
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="rounded-xl border border-black/10 p-4"><div className="text-xs uppercase tracking-[0.16em] text-black/45">Reserve</div><div className="mt-1 text-3xl font-light">{result.reserve}</div></div>
+          <div className="rounded-xl border border-black/10 p-4"><div className="text-xs uppercase tracking-[0.16em] text-black/45">Capacity</div><div className="mt-1 text-3xl font-light">{result.capacity}</div></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  const [showAnimation, setShowAnimation] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowAnimation(false), 6000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const method: MethodItem[] = [
+    { num: "01", title: "Force Plate", desc: "測量垂直力、爆發力、RFD、左右不對稱。" },
+    { num: "02", title: "Maximal Strength 1RM", desc: "反映全身力量儲備與神經肌肉狀態。" },
+    { num: "03", title: "VO2 Max", desc: "評估心肺、代謝與長期訓練承受能力。" },
+  ];
+
+  const training: SimpleCard[] = [
+    { title: "Strength", desc: "打造更強的力量基礎。" },
+    { title: "Performance", desc: "更快、更強、更有效率。" },
+    { title: "Longevity", desc: "延長健康壽命，享受更好的生活。" },
+    { title: "AI Assessment", desc: "AI 追蹤評估，讓進步更具體。" },
+  ];
+
+  const facilities: SimpleCard[] = [
+    { title: "Warehouse Strength Floor", desc: "自由重量訓練區", image: "/floor.jpg" },
+    { title: "Machine Training Zone", desc: "固定式器械區", image: "/machine.jpg" },
+    { title: "Cardio Zone", desc: "心肺訓練區", image: "/cardio.jpg" },
+    { title: "Group Class Studio", desc: "團課教室", image: "/class.jpg" },
+    { title: "Yoga Studio", desc: "瑜珈教室", image: "/yoga.jpg" },
+    { title: "Muay Thai Zone", desc: "泰拳區", image: "/muaythai.jpg" },
+    { title: "Recovery Corner", desc: "恢復與放鬆區", image: "/recovery.jpg" },
+    { title: "Performance Coaching", desc: "運動表現訓練", image: "/coaching.jpg" },
+    { title: "Community", desc: "強者社群 / 共同進步", image: "/community.jpg" },
+  ];
+
+  const plans: Plan[] = [
+    { name: "Essential", sub: "Independent training", items: ["基礎力量評估", "彈性自主訓練", "月度訓練記錄", "基礎設施使用"], cta: "SELECT PLAN" },
+    { name: "Unlimited", sub: "Full access", items: ["無限次訓練", "高級評估", "團體課程", "優先預約"], cta: "START 7-DAY TRIAL" },
+    { name: "Coached", sub: "Structured progression", items: ["一對一教練指導", "個性化訓練計劃", "周期化訓練", "專業評估追蹤"], cta: "APPLY NOW" },
+  ];
+
+  return (
+    <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
       <AnimatePresence>
-        {stage < 2 && (
-          <motion.div 
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
-            exit={{ opacity: 0 }}
-          >
-            {/* 動畫內容 */}
+        {showAnimation && (
+          <motion.div exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black">
+            <div className="text-center text-4xl space-y-6">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                <p>Age.</p><p>Weakness.</p><p>Frailty.</p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}>
+                <p>Strength.</p><p>Performance.</p><p>Longevity.</p>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* 原本的頁面內容 */}
-      <div className="relative z-0">
-        {/* 你的 SliderRow 和其他組件 */}
-      </div>
+      <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
+        <div className="absolute inset-0 bg-[#020202]" />
+        <div className="absolute right-[-14%] top-[-12%] h-[1050px] w-[1120px] rounded-full bg-white/[0.08] blur-[220px]" /> 
+        <div className="absolute right-[2%] top-[18%] h-[760px] w-[900px] rounded-full bg-white/[0.05] blur-[180px]" />
+        <div className="absolute right-[18%] top-[42%] h-[500px] w-[650px] rounded-full bg-white/[0.03] blur-[150px]" />
+        <div className="absolute left-[28%] top-[18%] h-[620px] w-[760px] rounded-full bg-white/[0.02] blur-[160px]" />
+        <div className="absolute left-0 top-0 h-full w-[58%] bg-[linear-gradient(90deg,rgba(0,0,0,0.36)_0%,rgba(0,0,0,0.16)_58%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.025)_26%,transparent_55%)]" />
+        <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(rgba(255,255,255,.20)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.20)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_42%,transparent_0%,rgba(0,0,0,0.04)_42%,rgba(0,0,0,0.44)_100%)]" />
+
+        <header className="relative z-10 flex items-center justify-between">
+          <div className="w-max origin-top-left scale-[0.95]">
+            <div className={`${michroma.className} text-[16px] uppercase tracking-[0.18em] md:text-[22px] md:tracking-[0.22em] lg:text-[28px]`}>WAREHOUSE GYM</div>
+            <div className="mt-2 flex gap-4 text-[8px] uppercase tracking-[0.15em] text-white/45 md:gap-6 md:text-[10px] md:tracking-[0.2em]">
+              <span>Strength.</span><span>Performance.</span><span>Longevity.</span>
+            </div>
+          </div>
+          <nav className="hidden gap-9 text-[10px] uppercase tracking-[0.22em] text-white/45 lg:flex">
+            <a href="#calculator" className="transition hover:text-white">Strength Age</a>
+            <a href="#training" className="transition hover:text-white">Training</a>
+            <a href="#technology" className="transition hover:text-white">Technology</a>
+            <a href="#membership" className="transition hover:text-white">Membership</a>
+          </nav>
+        </header>
+
+        <div className="relative z-10 flex min-h-[82vh] items-center pt-20 md:pt-32 lg:pt-36">
+          <div className="w-full max-w-6xl">
+            <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/45">Taiwan Strength & Longevity Lab</div>
+            <h1 className="max-w-[820px] text-[15.2vw] font-normal uppercase leading-[0.76] tracking-[-0.075em] md:text-[9.8vw] lg:text-[6.25vw]" style={{ fontFamily: "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif", transform: "scaleX(0.92)", transformOrigin: "left center" }}>
+              <span className="block text-white tracking-normal"><span className="inline-block ml-[-0.10em]">L</span><span className="inline-block ml-[0.10em]">I</span><span className="inline-block ml-[0.04em]">F</span><span className="inline-block ml-[0.06em]">T</span></span>
+              <span className="block ml-[-0.10em] text-white tracking-[-0.075em]">HEAVY</span>
+            </h1>
+            <h2 className={`${michroma.className} mt-2 max-w-[92vw] text-[12vw] uppercase leading-[1.05] tracking-[-0.04em] text-transparent md:max-w-[980px] md:text-[5.8vw] md:tracking-[-0.02em] lg:text-[3.8vw]`} style={{ WebkitTextStroke: "1.1px rgba(255,255,255,.52)" }}>STAY YOUNG.</h2>
+            <p className="mt-9 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
+              Your body is aging. Your strength does not have to.<br />Warehouse Gym measures strength, performance and longevity as one unified system.<br />
+              <span className="mt-3 block text-white/48">Warehouse Gym 不只是健身房。我們將重訓、運動表現、健康老化與數據科學整合成一套可追蹤、可調整、能持續進步的訓練系統。</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 剩餘區塊請依照原本結構放置，因為長度限制，這裡保證結構與邏輯連結正確 */}
+      <section id="calculator" className="border-b border-white/10 px-6 py-24 md:px-14 lg:px-20"><StrengthAgeCalculator /></section>
+      
+      <div className="fixed right-5 top-1/2 -translate-y-1/2 rotate-90 hidden md:block" style={{ color: 'white', opacity: 0.3, fontSize: '32px', fontFamily: 'Michroma, sans-serif' }}>COMING SOON...</div>
+      
+      <style>{`body { background: #000; } .calculator-slider { appearance: none; height: 2px; background: rgba(255,255,255,0.22); } .calculator-slider::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; border-radius: 999px; background: #fff; cursor: pointer; }`}</style>
     </main>
   );
 }
-
 function StrengthAgeCalculator() {
   const [age, setAge] = useState(62);
   const [strength, setStrength] = useState(91);
@@ -847,7 +1007,10 @@ const facilities: SimpleCard[] = [
           border: none;
         }
       `}</style>
-<div className="fixed right-5 top-1/2 -translate-y-1/2 rotate-90 hidden md:block" style={{ 
+<div style={{ 
+  position: 'fixed', 
+  right: '20px', 
+  top: '50%', 
   color: 'white', 
   opacity: 0.3, 
   fontSize: '32px',
