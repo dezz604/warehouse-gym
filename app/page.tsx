@@ -519,21 +519,39 @@ const facilities: SimpleCard[] = [
       {/* --- 在此插入這整段 --- */}
       <AnimatePresence>
         {showAnimation && (
-          <motion.div exit={{ opacity: 0 }} className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black">
-            <div className="text-center text-4xl space-y-6">
+          <motion.div 
+            exit={{ opacity: 0, transition: { duration: 0.8 } }}
+            className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black"
+          >
+            {/* 底部微妙的光圈效果 */}
+            <div className="absolute h-[600px] w-[600px] rounded-full bg-white/[0.03] blur-[150px]" />
+            
+            <div 
+              className="relative z-10 text-center space-y-12 uppercase tracking-[-0.05em]"
+              style={{ 
+                fontFamily: "'DIN Schablonierschrift', 'Bahnschrift', 'Arial Narrow', sans-serif",
+                transform: "scaleX(0.92)"
+              }}
+            >
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                <p>Age.</p><p>Weakness.</p><p>Frailty.</p>
+                <p className="text-5xl md:text-7xl leading-tight opacity-80">Age.</p>
+                <p className="text-5xl md:text-7xl leading-tight opacity-80">Weakness.</p>
+                <p className="text-5xl md:text-7xl leading-tight opacity-80">Frailty.</p>
               </motion.div>
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}>
-                <p>Strength.</p><p>Performance.</p><p>Longevity.</p>
+              
+              <motion.div 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ delay: 2.2, duration: 1 }}
+              >
+                <p className="text-5xl md:text-7xl leading-tight">Strength.</p>
+                <p className="text-5xl md:text-7xl leading-tight">Performance.</p>
+                <p className="text-6xl md:text-8xl leading-tight font-bold text-white tracking-tighter">Longevity.</p>
               </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      {/* ----------------------- */}
-
-
       {/* HERO */}
 
       <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
