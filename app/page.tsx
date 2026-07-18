@@ -558,20 +558,9 @@ const facilities: SimpleCard[] = [
     </motion.div>
   )}
 </AnimatePresence>
-        const [heroOpacity, setHeroOpacity] = useState(1);
+      {/* HERO */}
 
-  useEffect(() => {
-    const updateHeroOpacity = () => {
-      const progress = Math.min(window.scrollY / (window.innerHeight * 0.75), 1);
-      setHeroOpacity(1 - progress);
-    };
-
-    window.addEventListener("scroll", updateHeroOpacity, { passive: true });
-    updateHeroOpacity();
-
-    return () => window.removeEventListener("scroll", updateHeroOpacity);
-  }, []);
-
+      <section className="relative min-h-screen ...
 
 
       {/* STRENGTH AGE CALCULATOR */}
