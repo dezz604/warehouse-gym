@@ -518,36 +518,46 @@ const facilities: SimpleCard[] = [
       <main className="min-h-screen overflow-hidden bg-black text-white antialiased selection:bg-white selection:text-black">
       {/* --- 在此插入這整段 --- */}
       <AnimatePresence>
-        {showAnimation && (
-          <motion.div 
-            exit={{ opacity: 0, transition: { duration: 0.8 } }}
-            className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black ${michroma.className}`}
+  {showAnimation && (
+    <motion.div 
+      exit={{ opacity: 0, transition: { duration: 0.8 } }}
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black ${michroma.className}`}
+    >
+      {/* 移除所有光圈與特效，僅保留文字 */}
+      <div className="flex flex-col gap-24 text-center uppercase tracking-[0.25em]">
+        
+        {/* 第一階段 */}
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          exit={{ opacity: 0 }}
+          className="flex flex-col gap-8"
+        >
+          <p className="text-5xl md:text-7xl opacity-60">Age.</p>
+          <p className="text-5xl md:text-7xl opacity-60">Weakness.</p>
+          <p className="text-5xl md:text-7xl opacity-60">Frailty.</p>
+        </motion.div>
+        
+        {/* 第二階段 */}
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 2.2, duration: 1 }}
+          className="flex flex-col gap-8"
+        >
+          <p className="text-5xl md:text-7xl">Strength.</p>
+          <p className="text-5xl md:text-7xl">Performance.</p>
+          <p 
+            className="text-6xl md:text-8xl text-transparent"
+            style={{ WebkitTextStroke: "2px white" }}
           >
-            <div className="relative z-10 text-center space-y-10 uppercase tracking-[0.15em]">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                <p className="text-4xl md:text-6xl opacity-70">Age.</p>
-                <p className="text-4xl md:text-6xl opacity-70">Weakness.</p>
-                <p className="text-4xl md:text-6xl opacity-70">Frailty.</p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ delay: 2.2, duration: 1 }}
-              >
-                <p className="text-4xl md:text-6xl">Strength.</p>
-                <p className="text-4xl md:text-6xl">Performance.</p>
-                <p 
-                  className="text-5xl md:text-7xl text-transparent"
-                  style={{ WebkitTextStroke: "1px white" }}
-                >
-                  Longevity.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            Longevity.
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
       {/* HERO */}
 
       <section className="relative min-h-screen overflow-hidden border-b border-white/10 px-6 py-8 md:px-14 lg:px-20">
