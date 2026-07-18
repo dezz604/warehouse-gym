@@ -523,8 +523,8 @@ const facilities: SimpleCard[] = [
       exit={{ opacity: 0, transition: { duration: 0.8 } }}
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black ${michroma.className}`}
     >
-      {/* 手機版縮小字體，大螢幕維持氣勢 */}
-      <div className="flex flex-col gap-16 md:gap-24 text-center uppercase tracking-[0.15em] px-4">
+      {/* 響應式佈局：手機版縮小字體，確保不溢出螢幕 */}
+      <div className="flex flex-col gap-16 md:gap-24 text-center uppercase tracking-[0.15em] px-4 w-full">
         
         {/* 第一階段 */}
         <motion.div 
