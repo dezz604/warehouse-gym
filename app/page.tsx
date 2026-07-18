@@ -523,19 +523,19 @@ const facilities: SimpleCard[] = [
       exit={{ opacity: 0, transition: { duration: 0.8 } }}
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black ${michroma.className}`}
     >
-      {/* 移除所有光圈與特效，僅保留文字 */}
-      <div className="flex flex-col gap-24 text-center uppercase tracking-[0.25em]">
+      {/* 手機版縮小字體，大螢幕維持氣勢 */}
+      <div className="flex flex-col gap-16 md:gap-24 text-center uppercase tracking-[0.15em] px-4">
         
         {/* 第一階段 */}
         <motion.div 
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           exit={{ opacity: 0 }}
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-6"
         >
-          <p className="text-5xl md:text-7xl opacity-60">Age.</p>
-          <p className="text-5xl md:text-7xl opacity-60">Weakness.</p>
-          <p className="text-5xl md:text-7xl opacity-60">Frailty.</p>
+          <p className="text-3xl md:text-7xl opacity-60">Age.</p>
+          <p className="text-3xl md:text-7xl opacity-60">Weakness.</p>
+          <p className="text-3xl md:text-7xl opacity-60">Frailty.</p>
         </motion.div>
         
         {/* 第二階段 */}
@@ -543,13 +543,13 @@ const facilities: SimpleCard[] = [
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 2.2, duration: 1 }}
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-6"
         >
-          <p className="text-5xl md:text-7xl">Strength.</p>
-          <p className="text-5xl md:text-7xl">Performance.</p>
+          <p className="text-3xl md:text-7xl">Strength.</p>
+          <p className="text-3xl md:text-7xl">Performance.</p>
           <p 
-            className="text-6xl md:text-8xl text-transparent"
-            style={{ WebkitTextStroke: "2px white" }}
+            className="text-4xl md:text-8xl text-transparent"
+            style={{ WebkitTextStroke: "1px white" }}
           >
             Longevity.
           </p>
